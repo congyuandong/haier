@@ -11,10 +11,8 @@ import com.legoo.haier.Archon.TaskArchon.OnSucessedListener;
 import com.legoo.haier.AsyncTask.RegisterAsyncTask;
 import com.legoo.haier.AsyncTask.Base.JsonEvent;
 import com.legoo.haier.Extension.ApplicationUtils;
-import com.legoo.haier.Extension.FormatUtils;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.CheckBox;
 import android.widget.EditText;
 
 /**

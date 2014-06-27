@@ -39,7 +39,8 @@ public class RegisterAsyncTask extends NetworkAsyncTask
 	{   
 		JsonEvent event = new JsonEvent(this);
 		event.setMark(super.getMark());
-		String url = Haier.getInstance().getDataService().getRegister();
+//		String url = Haier.getInstance().getDataService().getRegister();
+		String url = "";
 		if (url != null)
 		{
 			List<NameValuePair> pairs = new ArrayList<NameValuePair>(); 

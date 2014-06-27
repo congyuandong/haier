@@ -6,14 +6,11 @@ import com.legoo.haier.Application.Haier;
 import com.legoo.haier.Extension.ApplicationUtils;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 /**
  * @class User Center Activity
@@ -25,7 +22,6 @@ public class UserCenterActivity extends NavigationActivity
 {
 	private RelativeLayout _layoutUserCenterMytv;
 	private Button _buttonLogout;
-	private final static int SCANNIN_GREQUEST_CODE = 1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 

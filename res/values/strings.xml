@@ -2,52 +2,8 @@
 <resources>
 
     <string name="app_name">海尔电视智能互动服务平台</string> 
-    <string name="dataservice_base">http://218.203.12.53</string> 
-    <string name="dataservice_get_home">InitHome</string>
-    <string name="dataservice_get_departments">zjjs/PhoneKS?PKSID=%1$s</string>
-    <string name="dataservice_get_experts">zjjs/PhoneZJList?K=%1$s&#038;Z=%2$s&#038;Y=%3$s&#038;W=%4$s&#038;pageNo=%5$d&#038;NAME=%6$s&#038;YY=%7$s</string>
-    <string name="dataservice_get_expert_filter">zjjs/PhoneZJData</string>
-    <string name="dataservice_get_expert">zj/PHONE_ZJ?YSID=%1$s</string>
-    <string name="dataservice_get_schedules">zj/InitPB/%1$s</string>
-    <string name="dataservice_get_service_categories">khfw/InitPKHFW</string>
-    <string name="dataservice_get_service_links">khfw/InitCKHFW?PFWMENUID=%1$s</string>
-
-    <string name="dataservice_get_service_detail">khfw/khfwContent?FWMENUID=%1$s</string>
-    <string name="dataservice_get_tcm_categories">zybj/InitPZYBJ</string>
-    <string name="dataservice_get_tcm_links">zybj/InitCZYBJ?PZYBJMENUID=%1$s</string>
-    <string name="dataservice_get_tcm_detail">zybj/zybjContent?ZYBJMENUID=%1$s</string>
-    
-    <string name="dataservice_get_agreement">phoneFwxy</string>
-    <string name="dataservice_get_contact">lxkf</string>
-    <string name="dataservice_get_question_list">getCJWTMenu</string>
-    <string name="dataservice_get_question_detail">getCJWTContent?DZFWMENUID=%1$s</string>
-    <string name="dataservice_get_update">getLastVersion</string>
-    
-    <string name="dataservice_post_reserve">yhgh</string>
-    <string name="dataservice_post_authenticate">login/phonelogin</string>
-    <!--  -->
-    <string name="dataservice_post_modify">myinfo/upphoneinfo</string>
-    <string name="dataservice_post_password_change">mypassword/upPhonePassword</string>
-    <string name="dataservice_post_register">phoneRegister</string>
-    <string name="dataservice_post_costs">myfinance/searchPhone</string>
-    <string name="dataservice_post_costs_daily">myfinance/searchPhoneMX</string>
-    <string name="dataservice_post_reports">myexamination/searchPhone</string>
-    <string name="dataservice_post_reports_detail">myexamination/searchPhoneMXImage</string>
-    <string name="dataservice_post_reports_detail_url">myexamination/searchPhoneMXImage?APPID=%1$s&#038;BGDID=%2$s</string>
-    <string name="dataservice_post_reservations">myyy/PHONEYY</string>
-    <string name="dataservice_post_reservation_cancel">myyy/PHONECancelYY</string>
-    <string name="dataservice_post_contacts">mycylx/phoneSearch</string>
-    <string name="dataservice_post_contacts_update">mycylx/phoneUpdate</string>
-    <string name="dataservice_post_contacts_delete">mycylx/phoneDelete</string>
-    <string name="dataservice_post_contacts_add">mycylx/phoneAdd</string>
-    <string name="dataservice_post_feedback">ydyf/phoneSearch</string>
-    <string name="dataservice_post_feedback_update">ydyf/phoneUpdate</string>
-    <string name="dataservice_post_feedback_delete">ydyf/phoneDel</string>
-    <string name="dataservice_post_feedback_add">ydyf/phoneAdd</string>
-    <string name="dataservice_post_drugs">jbyw/phoneSearch</string>
-    <string name="dataservice_post_verification">cmpp</string>
-    <string name="dataservice_post_query_limit">cxxz</string>
-    
+    <string name="dataservice_base">http://218.203.12.53</string>
+        
     <string name="public_add">添加</string>
     <string name="public_edit">编辑</string>
     <string name="public_delete">删除</string>

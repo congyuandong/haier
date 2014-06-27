@@ -4,6 +4,11 @@ import com.legoo.haier.R;
 import com.legoo.haier.Activity.Base.NavigationActivity;
 import com.legoo.haier.Application.Haier;
 import com.legoo.haier.Archon.TaskArchon;
+import com.legoo.haier.Archon.TaskArchon.OnCheckInputListener;
+import com.legoo.haier.Archon.TaskArchon.OnConfirmListener;
+import com.legoo.haier.Archon.TaskArchon.OnLoadedListener;
+import com.legoo.haier.Archon.TaskArchon.OnSucessedListener;
+import com.legoo.haier.AsyncTask.Base.JsonEvent;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,6 +34,7 @@ public class RepairActivity extends NavigationActivity
 	{
 		super.onCreate(savedInstanceState, R.layout.activity_repair);
 		initView();
+		initTask();
 	}
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) 
@@ -56,14 +62,44 @@ public class RepairActivity extends NavigationActivity
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				checkLogin();
+			}
+		});
+	}
+	private void initTask()
+	{
+		_taskArchon = new TaskArchon(this, TaskArchon.ACCESS_TYPE_SUBMIT, true);
+		_taskArchon.setWaittingEnabled(true);
+		_taskArchon.setSubmitButton(R.id.buttonUserRegisterSubmit);
+		_taskArchon.setOnLoadedListener(new OnLoadedListener() 
+		{
+			@Override
+			public void OnLoaded(final JsonEvent event) 
+			{
+				_taskArchon.showSucessDialog(getString(R.string.user_register_submit_succeed));
+			}
+		});
+		_taskArchon.setOnSucessedListener(new OnSucessedListener()
+		{
+			@Override
+			public void onSucessed() 
+			{
+				finish();
+			}
+		});
+		_taskArchon.setOnConfirmListener(new OnConfirmListener() 
+		{
+			@Override
+			public void onConfirm() 
+			{
 				submit();
 			}
 		});
+		
 	}
 	
 	private void submit()
 	{
-		checkLogin();
 	}
 	
 	private void checkLogin()
@@ -82,6 +118,14 @@ public class RepairActivity extends NavigationActivity
 	
 	private void checkTV()
 	{
-
+		if(Haier.getInstance().getUser().getCurrent().isRegister())
+		{
+			submit();
+		}else
+		{
+			startActivityForResult(new Intent(RepairActivity.this, QRScanActivity.class)
+				,UserLoginActivity.TARGET_REPAIR
+			);			
+		}
 	}
 }
