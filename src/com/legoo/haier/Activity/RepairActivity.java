@@ -3,6 +3,7 @@ package com.legoo.haier.Activity;
 import com.legoo.haier.R;
 import com.legoo.haier.Activity.Base.NavigationActivity;
 import com.legoo.haier.Application.Haier;
+import com.legoo.haier.Archon.TaskArchon;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ public class RepairActivity extends NavigationActivity
 	public final int RESULT_TV = 2;
 	
 	private Button buttonSubmit;
+	private TaskArchon _taskArchon;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
@@ -78,8 +80,8 @@ public class RepairActivity extends NavigationActivity
 		}
 	}
 	
-	private boolean checkTV()
+	private void checkTV()
 	{
-		return false;
+
 	}
 }

@@ -28,12 +28,12 @@ public class HaierUser
 	
 	public boolean hasLogin()
 	{
-		return (_current.getPasswordMD5() != null);
+		return (_current.getId() != null);
 	}
 	
 	public boolean hasPrepared()
 	{
-		return (_remember.getAccount() != null && _remember.getAccount().length() > 0 
+		return (_remember.getName() != null && _remember.getName().length() > 0 
 				&& _remember.getPassword() != null && _remember.getPassword().length() > 0);
 	}
 	
@@ -73,14 +73,14 @@ public class HaierUser
 	private void initRemember()
 	{
 		_remember = new UserModel();
-		_remember.setID(_application.getPreferences().loadUserID());
-		_remember.setAccount(_application.getPreferences().loadUserAccount());
+		_remember.setId(_application.getPreferences().loadUserID());
+		_remember.setName(_application.getPreferences().loadUserAccount());
 		_remember.setPassword(_application.getPreferences().loadUserPassword());
 	}
 	
 	private void save()
 	{
-		_application.getPreferences().saveUser(_current.getID(), _current.getAccount(), _current.getPassword());
+		_application.getPreferences().saveUser(_current.getId(), _current.getName(), _current.getPassword());
 	}
 	
 	public void erase()

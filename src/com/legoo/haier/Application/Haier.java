@@ -2,14 +2,6 @@ package com.legoo.haier.Application;
 
 import java.util.Random;
 
-import com.legoo.haier.Archon.TaskArchon;
-import com.legoo.haier.Archon.TaskArchon.OnLoadedListener;
-import com.legoo.haier.AsyncTask.UpdateAsyncTask;
-import com.legoo.haier.AsyncTask.Base.JsonEvent;
-import com.legoo.haier.AsyncTask.Callback.ModelEvent;
-import com.legoo.haier.Extension.ApplicationUtils;
-import com.legoo.haier.Model.UpdateModel;
-
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
@@ -54,23 +46,23 @@ public class Haier extends Application
 
 	public void checkUpdate(Context content,final Activity activity)
 	{
-		TaskArchon updateTaskArchon = new TaskArchon(this, TaskArchon.ACCESS_TYPE_GET);
-		updateTaskArchon.setConfirmEnabled(false);
-		updateTaskArchon.setWaittingEnabled(false);
-		updateTaskArchon.setOnLoadedListener(new OnLoadedListener()
-		{
-			@Override
-			public void OnLoaded(final JsonEvent event) {
-				// TODO Auto-generated method stub
-				UpdateModel model = (UpdateModel)((ModelEvent)event).getModel();
-				if (ApplicationUtils.isCompareVersionNewest(model.getVersionName()) == true)
-				{
-					ApplicationUtils.showUpdateDialog(activity, 
-							model.getVersionName(), model.getURL());
-				}			
-			}
-		});
-		updateTaskArchon.executeAsyncTask(new UpdateAsyncTask());
+//		TaskArchon updateTaskArchon = new TaskArchon(this, TaskArchon.ACCESS_TYPE_GET);
+//		updateTaskArchon.setConfirmEnabled(false);
+//		updateTaskArchon.setWaittingEnabled(false);
+//		updateTaskArchon.setOnLoadedListener(new OnLoadedListener()
+//		{
+//			@Override
+//			public void OnLoaded(final JsonEvent event) {
+//				// TODO Auto-generated method stub
+//				UpdateModel model = (UpdateModel)((ModelEvent)event).getModel();
+//				if (ApplicationUtils.isCompareVersionNewest(model.getVersionName()) == true)
+//				{
+//					ApplicationUtils.showUpdateDialog(activity, 
+//							model.getVersionName(), model.getURL());
+//				}			
+//			}
+//		});
+//		updateTaskArchon.executeAsyncTask(new UpdateAsyncTask());
 	}
 	
 	public HaierAnimation getAnimation()
