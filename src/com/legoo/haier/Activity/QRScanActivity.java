@@ -24,6 +24,7 @@ import android.widget.Toast;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 import com.legoo.haier.R;
+import com.legoo.haier.Activity.Base.NavigationActivity;
 import com.legoo.haier.QRCode.Camera.CameraManager;
 import com.legoo.haier.QRCode.Decoding.CaptureActivityHandler;
 import com.legoo.haier.QRCode.Decoding.InactivityTimer;
@@ -31,9 +32,10 @@ import com.legoo.haier.QRCode.View.ViewfinderView;
 
 /**
  * Initial the camera
- * @author Ryan.Tang
+ * 
+ * @author Congyuandong
  */
-public class QRScanActivity extends Activity implements Callback {
+public class QRScanActivity extends NavigationActivity implements Callback {
 
 	private CaptureActivityHandler handler;
 	private ViewfinderView viewfinderView;
@@ -49,23 +51,27 @@ public class QRScanActivity extends Activity implements Callback {
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_capture);
-		//ViewUtil.addTopView(getApplicationContext(), this, R.string.scan_card);
+		super.onCreate(savedInstanceState, R.layout.activity_capture);
+		// setContentView(R.layout.activity_capture);
+		// ViewUtil.addTopView(getApplicationContext(), this,
+		// R.string.scan_card);
 		CameraManager.init(getApplication());
 		viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
-		
-		Button mButtonBack = (Button) findViewById(R.id.button_back);
-		mButtonBack.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				QRScanActivity.this.finish();
-				
-			}
-		});
+
+		// Button mButtonBack = (Button) findViewById(R.id.button_back);
+		// mButtonBack.setOnClickListener(new OnClickListener() {
+		//
+		// @Override
+		// public void onClick(View v) {
+		// QRScanActivity.this.finish();
+		//
+		// }
+		// });
 		hasSurface = false;
 		inactivityTimer = new InactivityTimer(this);
+		
+		getNavigation().setTitle(getString(R.string.navigation_title_user_qrscan));
+        getNavigation().setReturn(getString(R.string.navigation_return));
 	}
 
 	@Override
@@ -89,7 +95,7 @@ public class QRScanActivity extends Activity implements Callback {
 		}
 		initBeepSound();
 		vibrate = true;
-		
+
 	}
 
 	@Override
@@ -107,9 +113,9 @@ public class QRScanActivity extends Activity implements Callback {
 		inactivityTimer.shutdown();
 		super.onDestroy();
 	}
-	
+
 	/**
-	 * ������������������
+	 * 
 	 * @param result
 	 * @param barcode
 	 */
@@ -118,8 +124,9 @@ public class QRScanActivity extends Activity implements Callback {
 		playBeepSoundAndVibrate();
 		String resultString = result.getText();
 		if (resultString.equals("")) {
-			Toast.makeText(QRScanActivity.this, "Scan failed!", Toast.LENGTH_SHORT).show();
-		}else {
+			Toast.makeText(QRScanActivity.this, "Scan failed!",
+					Toast.LENGTH_SHORT).show();
+		} else {
 			Intent resultIntent = new Intent();
 			Bundle bundle = new Bundle();
 			bundle.putString("result", resultString);
@@ -129,7 +136,7 @@ public class QRScanActivity extends Activity implements Callback {
 		}
 		QRScanActivity.this.finish();
 	}
-	
+
 	private void initCamera(SurfaceHolder surfaceHolder) {
 		try {
 			CameraManager.get().openDriver(surfaceHolder);

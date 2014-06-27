@@ -1,8 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
-
+    android:layout_height="fill_parent"
+    android:background="@color/background">
+	<RelativeLayout
+	    android:layout_width="fill_parent" 
+	    android:layout_height="@dimen/main_navigation_layout_height" 
+    	android:background="@color/main_navigation_background">
+	    <include layout="@layout/navigation_cover" />
+        <include layout="@layout/navigation_return" />
+        <include layout="@layout/navigation_title" />
+    </RelativeLayout>
+    
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
@@ -18,12 +27,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <include
+        <!-- include
             android:id="@+id/include1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            layout="@layout/activity_title" />
+            layout="@layout/activity_title" /-->
     </RelativeLayout>
 
-</FrameLayout>
+</LinearLayout>

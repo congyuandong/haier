@@ -1,30 +1,40 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffe1e0de" >
-
-    <Button
-        android:id="@+id/button1"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background">
+	
+     <RelativeLayout
+	    android:layout_width="fill_parent" 
+	    android:layout_height="@dimen/main_navigation_layout_height" 
+    	android:background="@color/main_navigation_background">
+	    <include layout="@layout/navigation_cover" />
+        <include layout="@layout/navigation_return" />
+        <include layout="@layout/navigation_title" />
+        
+    </RelativeLayout>
+	
+     <TextView
+        android:id="@+id/deviceid"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:text="扫描二维码" />
-
-    <TextView
-        android:id="@+id/result"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
         android:lines="2"
         android:gravity="center_horizontal"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
-
-    <ImageView
-        android:id="@+id/qrcode_bitmap"
+     
+     <TextView
+        android:id="@+id/macaddress"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/result"/>
-</RelativeLayout>
+        android:layout_height="wrap_content"
+        android:lines="2"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+    <Button
+        android:id="@+id/bind"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/user_mytv_bind" />
+
+</LinearLayout>
