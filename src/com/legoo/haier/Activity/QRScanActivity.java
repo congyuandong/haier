@@ -1,4 +1,4 @@
-package com.legoo.haier.QRCode;
+package com.legoo.haier.Activity;
 
 import java.io.IOException;
 import java.util.Vector;
@@ -33,7 +33,7 @@ import com.legoo.haier.QRCode.View.ViewfinderView;
  * Initial the camera
  * @author Ryan.Tang
  */
-public class MipcaActivityCapture extends Activity implements Callback {
+public class QRScanActivity extends Activity implements Callback {
 
 	private CaptureActivityHandler handler;
 	private ViewfinderView viewfinderView;
@@ -60,7 +60,7 @@ public class MipcaActivityCapture extends Activity implements Callback {
 			
 			@Override
 			public void onClick(View v) {
-				MipcaActivityCapture.this.finish();
+				QRScanActivity.this.finish();
 				
 			}
 		});
@@ -118,7 +118,7 @@ public class MipcaActivityCapture extends Activity implements Callback {
 		playBeepSoundAndVibrate();
 		String resultString = result.getText();
 		if (resultString.equals("")) {
-			Toast.makeText(MipcaActivityCapture.this, "Scan failed!", Toast.LENGTH_SHORT).show();
+			Toast.makeText(QRScanActivity.this, "Scan failed!", Toast.LENGTH_SHORT).show();
 		}else {
 			Intent resultIntent = new Intent();
 			Bundle bundle = new Bundle();
@@ -127,7 +127,7 @@ public class MipcaActivityCapture extends Activity implements Callback {
 			resultIntent.putExtras(bundle);
 			this.setResult(RESULT_OK, resultIntent);
 		}
-		MipcaActivityCapture.this.finish();
+		QRScanActivity.this.finish();
 	}
 	
 	private void initCamera(SurfaceHolder surfaceHolder) {

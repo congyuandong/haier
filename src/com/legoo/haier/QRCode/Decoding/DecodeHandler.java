@@ -30,7 +30,7 @@ import com.google.zxing.ReaderException;
 import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
 import com.legoo.haier.R;
-import com.legoo.haier.QRCode.MipcaActivityCapture;
+import com.legoo.haier.Activity.QRScanActivity;
 import com.legoo.haier.QRCode.Camera.CameraManager;
 import com.legoo.haier.QRCode.Camera.PlanarYUVLuminanceSource;
 
@@ -39,10 +39,10 @@ final class DecodeHandler extends Handler {
 
   private static final String TAG = DecodeHandler.class.getSimpleName();
 
-  private final MipcaActivityCapture activity;
+  private final QRScanActivity activity;
   private final MultiFormatReader multiFormatReader;
 
-  DecodeHandler(MipcaActivityCapture activity, Hashtable<DecodeHintType, Object> hints) {
+  DecodeHandler(QRScanActivity activity, Hashtable<DecodeHintType, Object> hints) {
     multiFormatReader = new MultiFormatReader();
     multiFormatReader.setHints(hints);
     this.activity = activity;
