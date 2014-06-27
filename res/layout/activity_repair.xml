@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background">
+    
+    <RelativeLayout
+	    android:layout_width="fill_parent" 
+	    android:layout_height="@dimen/main_navigation_layout_height" 
+    	android:background="@color/main_navigation_background"
+	    android:layout_weight="0">
+        
+	    <include layout="@layout/navigation_cover" />
+	    
+        <include layout="@layout/navigation_return" />
+        
+        <include layout="@layout/navigation_title" />
+        
+    </RelativeLayout>
+    <Button 
+        android:id="@+id/repair_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/more_repair"/>
+</LinearLayout>
