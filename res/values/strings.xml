@@ -92,6 +92,7 @@
     
     <string name="navigation_title_user_login">登录</string>
     <string name="navigation_title_user_center">用户中心</string>
+    <string name="navigation_title_user_mytv">我的电视</string>
     <string name="navigation_title_user_modify">个人资料</string>
     <string name="navigation_title_user_password_change">修改密码</string>
     <string name="navigation_title_user_register">注册</string>
@@ -104,6 +105,8 @@
     <string name="navigation_title_question_list">常见问题</string>
     <string name="navigation_title_question_detail">常见问题</string>
     <string name="navigation_title_contact">联系客服</string>
+    <string name="navigation_title_user_qrscan">二维码扫描</string>
+    
     
     <string name="user_login_account_hint">用户名</string>
 	<string name="user_login_password_hint">密码</string>
