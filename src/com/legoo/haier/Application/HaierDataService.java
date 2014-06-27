@@ -14,6 +14,14 @@ public class HaierDataService
 	private Haier _application;
 	
 	private String _base;
+	private String login;
+	private String register;
+	private String sampleShow;
+	private String bindTV;
+	private String repairTV;
+	private String consulting;
+	private String consultingList;
+	
 	
 	
 	
@@ -21,6 +29,13 @@ public class HaierDataService
 	{
 		this._application = application;
 		initDataService();
+		login = "";
+		register = "";
+		sampleShow = "";
+		bindTV = "";
+		repairTV = "";
+		consulting = "";
+		consultingList = "";
 	}
 	
 	private void initDataService()
@@ -28,6 +43,34 @@ public class HaierDataService
 		_base = _application.getString(R.string.dataservice_base);		
 	}
 	
+	public String postLogin()
+	{
+		return combineUrl(login);
+	}
+	public String postRegister()
+	{
+		return combineUrl(register);		
+	}
+	public String getSampleShow()
+	{
+		return combineUrl(sampleShow);		
+	}
+	public String postBindTV()
+	{
+		return combineUrl(bindTV);		
+	}
+	public String postRepairTV()
+	{
+		return combineUrl(repairTV);		
+	}
+	public String postConsulting()
+	{
+		return combineUrl(consulting);		
+	}
+	public String postConsultingList()
+	{
+		return combineUrl(consultingList);		
+	}
 	
 	private String combineUrl(String uri)
 	{
