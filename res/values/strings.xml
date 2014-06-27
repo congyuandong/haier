@@ -202,4 +202,6 @@
     <string name="about_text">"海尔电视智能服务互动平台"</string>
 	<string name="about_copyright">Copyright© 2014, com.legoo All Rights Reserved</string>
 	
+	<string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+	
 </resources>
