@@ -40,9 +40,7 @@ public class UserLoginActivity extends NavigationActivity
 	
 	public static final int TARGET_NULL = 0;
 	public static final int TARGET_USER_CENTER = 1;
-	public static final int TARGET_RESERVATION = 2;
-	public static final int TARGET_REPORT = 3;
-	public static final int TARGET_COST = 4;
+	public static final int TARGET_REPAIR = 2;
 	
 	private int _target;
 	private boolean _auto;
