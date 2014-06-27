@@ -23,8 +23,6 @@ import android.widget.TextView;
  */
 public class UserCenterActivity extends NavigationActivity
 {
-	private RelativeLayout _layoutPassword;
-	private RelativeLayout _layoutFeedback;
 	private RelativeLayout _layoutUserCenterMytv;
 	private Button _buttonLogout;
 	private final static int SCANNIN_GREQUEST_CODE = 1;
@@ -38,8 +36,6 @@ public class UserCenterActivity extends NavigationActivity
 	
 	private void initView() 
 	{
-		_layoutPassword = (RelativeLayout) findViewById(R.id.layoutUserCenterPassword);
-		_layoutFeedback = (RelativeLayout) findViewById(R.id.layoutMoreFeedback);
 		_layoutUserCenterMytv = (RelativeLayout) findViewById(R.id.layoutUserCenterMytv);
 		_buttonLogout = (Button) findViewById(R.id.buttonUserCenterLogout);
 		
@@ -50,22 +46,6 @@ public class UserCenterActivity extends NavigationActivity
 			}	
 		});
 		
-		_layoutPassword.setOnClickListener(new OnClickListener()
-		{
-			@Override
-			public void onClick(View v) 
-			{
-				startActivity(new Intent(UserCenterActivity.this, UserPasswordChangeActivity.class));
-			}
-		});
-		_layoutFeedback.setOnClickListener(new OnClickListener()
-		{
-			@Override
-			public void onClick(View v) 
-			{
-//				startActivity(new Intent(UserCenterActivity.this, FeedbackListActivity.class));				
-			}
-		});
 		_buttonLogout.setOnClickListener(new OnClickListener()
 		{
 			@Override

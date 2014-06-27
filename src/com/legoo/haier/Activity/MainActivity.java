@@ -5,7 +5,7 @@ import com.legoo.haier.Activity.Base.BaseActivity;
 import com.legoo.haier.Application.Haier;
 import com.legoo.haier.Archon.TaskArchon;
 import com.legoo.haier.Archon.TaskArchon.OnLoadedListener;
-import com.legoo.haier.AsyncTask.AuthenticateAsyncTask;
+import com.legoo.haier.AsyncTask.LoginAsyncTask;
 import com.legoo.haier.AsyncTask.Base.JsonEvent;
 import com.legoo.haier.Dialog.MessageDialog;
 import com.legoo.haier.Dialog.Base.BaseDialog;
@@ -156,12 +156,12 @@ public class MainActivity extends BaseActivity
 				UserModel user = (UserModel) loginTaskArchon.getModel();
 				if (Haier.getInstance().getUser().login(user) == true)
 				{
-					Haier.getInstance().getToast().show(String.format(getString(R.string.user_login_succeed), user.getAccount()));
+					Haier.getInstance().getToast().show(String.format(getString(R.string.user_login_succeed), user.getName()));
 				}
 			}
 		});
-		loginTaskArchon.executeAsyncTask(new AuthenticateAsyncTask(
-				Haier.getInstance().getUser().getRemember().getAccount(),
+		loginTaskArchon.executeAsyncTask(new LoginAsyncTask(
+				Haier.getInstance().getUser().getRemember().getName(),
 				Haier.getInstance().getUser().getRemember().getPassword()));
 	}
 	

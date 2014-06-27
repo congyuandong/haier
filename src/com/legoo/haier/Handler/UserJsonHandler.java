@@ -24,6 +24,7 @@ public class UserJsonHandler extends ModelJsonHandler
 	public final static String TELEPHONE = "PHONE";
 	public final static String ID_CARD = "SFZH";
 	public final static String EMAIL = "EMAIL";
+	public final static String DEVICE_ID = "DEVICE_ID";
 	
     public UserJsonHandler() {}
 
@@ -34,13 +35,9 @@ public class UserJsonHandler extends ModelJsonHandler
 		{
 			JSONObject rootObject = new JSONObject(content).getJSONObject(ROOT);
 			UserModel model = new UserModel();
-			model.setID(getString(rootObject, ID));
-			model.setAccount(getString(rootObject, ACCOUNT));
+			model.setId(getString(rootObject, ID));
 			model.setName(getString(rootObject, NAME));
-			model.setPasswordMD5(getString(rootObject, PASSWORD));
-			model.setTelephone(getString(rootObject, TELEPHONE));
-			model.setIDCard(getString(rootObject, ID_CARD));
-			model.setEmail(getString(rootObject, EMAIL));
+			model.setDeviceid(getString(rootObject,DEVICE_ID));
 			
 			setModel(model);
 			

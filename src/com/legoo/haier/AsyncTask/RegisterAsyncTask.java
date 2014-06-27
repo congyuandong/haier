@@ -20,30 +20,18 @@ import com.legoo.haier.Handler.Json.JsonOperation;
  */
 public class RegisterAsyncTask extends NetworkAsyncTask 
 {
-	private static final String ACCOUNT = "LOGID";
-	private static final String NAME = "XM";
+	private static final String NAME = "name";
 	private static final String PASSWORD = "PASSWORD";
-	private static final String TELEPHONE = "PHONE";
-	private static final String EMAIL = "EMAIL";
-	private static final String ID_CARD = "SFZH";
 	
-	private String _account;
 	private String _name;
 	private String _password;
-	private String _telephone;
-	private String _email;
-	private String _idcard;
 
 	
-	public RegisterAsyncTask(String account, String name, String password, String telephone, String email, String idcard)
+	public RegisterAsyncTask(String name, String password)
 	{
 		super();
 		_name = name;
-		_account = account;
 		_password = password;
-		_telephone = telephone;
-		_email = email;
-		_idcard = idcard;
 	}
 	
 	@Override
@@ -55,12 +43,8 @@ public class RegisterAsyncTask extends NetworkAsyncTask
 		if (url != null)
 		{
 			List<NameValuePair> pairs = new ArrayList<NameValuePair>(); 
-		    pairs.add(new BasicNameValuePair(ACCOUNT, _account));
 		    pairs.add(new BasicNameValuePair(NAME, _name));
 		    pairs.add(new BasicNameValuePair(PASSWORD, _password));
-		    pairs.add(new BasicNameValuePair(TELEPHONE, _telephone));
-		    pairs.add(new BasicNameValuePair(EMAIL, _email));
-		    pairs.add(new BasicNameValuePair(ID_CARD, _idcard));
 		    
 			ValueJsonHandler handler;
 			do

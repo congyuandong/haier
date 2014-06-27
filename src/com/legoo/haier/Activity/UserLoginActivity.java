@@ -7,7 +7,7 @@ import com.legoo.haier.Archon.TaskArchon;
 import com.legoo.haier.Archon.TaskArchon.OnCheckInputListener;
 import com.legoo.haier.Archon.TaskArchon.OnConfirmListener;
 import com.legoo.haier.Archon.TaskArchon.OnLoadedListener;
-import com.legoo.haier.AsyncTask.AuthenticateAsyncTask;
+import com.legoo.haier.AsyncTask.LoginAsyncTask;
 import com.legoo.haier.AsyncTask.Base.JsonEvent;
 import com.legoo.haier.AsyncTask.Callback.ModelEvent;
 import com.legoo.haier.Extension.ApplicationUtils;
@@ -160,7 +160,7 @@ public class UserLoginActivity extends NavigationActivity
 		
 		if (Haier.getInstance().getUser().hasPrepared() == true)
 		{
-			_textAccount.setText(Haier.getInstance().getUser().getRemember().getAccount());
+			_textAccount.setText(Haier.getInstance().getUser().getRemember().getName());
 			_textPassword.setText(Haier.getInstance().getUser().getRemember().getPassword());
 		}
 		
@@ -182,7 +182,7 @@ public class UserLoginActivity extends NavigationActivity
 	
 	private void submitData()
 	{
-		_taskArchon.executeAsyncTask(new AuthenticateAsyncTask(
+		_taskArchon.executeAsyncTask(new LoginAsyncTask(
 				_textAccount.getText().toString(), 
 				_textPassword.getText().toString()));
 	}
