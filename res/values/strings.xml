@@ -63,6 +63,7 @@
     <string name="navigation_title_contact">联系客服</string>
     <string name="navigation_title_user_qrscan">二维码扫描</string>
     
+    <string name="user_mytv_bind">一键绑定</string>
     
     <string name="user_login_account_hint">用户名</string>
 	<string name="user_login_password_hint">密码</string>
