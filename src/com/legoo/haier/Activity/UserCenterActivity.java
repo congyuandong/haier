@@ -28,9 +28,6 @@ public class UserCenterActivity extends NavigationActivity
 	private RelativeLayout _layoutUserCenterMytv;
 	private Button _buttonLogout;
 	private final static int SCANNIN_GREQUEST_CODE = 1;
-	//显示扫描结果
-	private TextView qrscanTextView ;
-	private ImageView qrscanImageView;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -49,10 +46,7 @@ public class UserCenterActivity extends NavigationActivity
 		_layoutUserCenterMytv.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent();
-				intent.setClass(UserCenterActivity.this, QRScanActivity.class);
-				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				startActivityForResult(intent, SCANNIN_GREQUEST_CODE);
+				startActivity(new Intent(UserCenterActivity.this, MyTVActivity.class));
 			}	
 		});
 		
@@ -86,21 +80,5 @@ public class UserCenterActivity extends NavigationActivity
         getNavigation().setTitle(getString(R.string.navigation_title_user_center));
         getNavigation().setReturn(getString(R.string.navigation_home));
 	}
-	
-	
-	@Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode) {
-		case SCANNIN_GREQUEST_CODE:
-			if(resultCode == RESULT_OK){
-				Bundle bundle = data.getExtras();
-				//显示扫描到的内容
-				qrscanTextView.setText(bundle.getString("result"));
-				//显示
-				qrscanImageView.setImageBitmap((Bitmap) data.getParcelableExtra("bitmap"));
-			}
-			break;
-		}
-    }
+
 }
