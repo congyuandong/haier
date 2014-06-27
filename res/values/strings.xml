@@ -117,6 +117,7 @@
 	<string name="more_consulting">在线咨询</string>
 	<string name="more_repair">一键报修</string>
 	<string name="more_search">站点查询</string>
+	<string name="more_recommend">推荐展示</string>
     
     <string name="list_item_loading">正在加载&#8230;</string>
 	<string name="list_item_notice">暂无内容</string>
