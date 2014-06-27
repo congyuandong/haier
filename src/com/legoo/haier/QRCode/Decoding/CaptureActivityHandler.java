@@ -30,7 +30,7 @@ import android.util.Log;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 import com.legoo.haier.R;
-import com.legoo.haier.QRCode.MipcaActivityCapture;
+import com.legoo.haier.Activity.QRScanActivity;
 import com.legoo.haier.QRCode.Camera.CameraManager;
 import com.legoo.haier.QRCode.View.ViewfinderResultPointCallback;
 
@@ -42,7 +42,7 @@ public final class CaptureActivityHandler extends Handler {
 
   private static final String TAG = CaptureActivityHandler.class.getSimpleName();
 
-  private final MipcaActivityCapture activity;
+  private final QRScanActivity activity;
   private final DecodeThread decodeThread;
   private State state;
 
@@ -52,7 +52,7 @@ public final class CaptureActivityHandler extends Handler {
     DONE
   }
 
-  public CaptureActivityHandler(MipcaActivityCapture activity, Vector<BarcodeFormat> decodeFormats,
+  public CaptureActivityHandler(QRScanActivity activity, Vector<BarcodeFormat> decodeFormats,
       String characterSet) {
     this.activity = activity;
     decodeThread = new DecodeThread(activity, decodeFormats, characterSet,
