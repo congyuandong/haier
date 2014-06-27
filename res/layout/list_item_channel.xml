@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/list_item_channel_height"
+    android:background="@drawable/list_item_background_selector">
+    
+    <TextView android:id="@+id/textListItemChannelTitle"
+		style="@style/list_item_channel_title" 
+		android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+		android:layout_marginLeft="@dimen/list_item_channel_title_marginLeft"
+		android:layout_marginRight="@dimen/list_item_channel_title_marginRight"
+		android:layout_marginBottom="@dimen/list_divider_height" />
+
+    <ImageView 
+		android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/list_item_channel_arraw_marginRight"
+        android:layout_height="fill_parent"
+        android:layout_width="@dimen/list_item_channel_arraw_width"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:contentDescription="@null"
+        android:src="@drawable/list_item_arrow"
+        android:layout_marginBottom="@dimen/list_divider_height"/>
+     
+    <View 
+		android:layout_width="fill_parent"
+		android:layout_alignParentBottom="true"
+		android:layout_height="@dimen/list_divider_height"
+		android:background="@drawable/list_divider" />
+    
+</RelativeLayout>

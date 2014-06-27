@@ -1,0 +1,170 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background">
+    
+    <RelativeLayout
+	    android:layout_width="fill_parent" 
+	    android:layout_height="@dimen/main_navigation_layout_height" 
+    	android:background="@color/main_navigation_background">
+        
+	    <include layout="@layout/navigation_cover" />
+	    
+        <include layout="@layout/navigation_return" />
+        
+        <include layout="@layout/navigation_title" />
+        
+    </RelativeLayout>
+     
+    <ScrollView
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:scrollbars="none"
+		android:overScrollMode="never" 
+		android:background="@drawable/main_background_repeat">
+        
+	    <LinearLayout 
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	        android:paddingTop="@dimen/expert_confirm_introduction_marginTop"
+	        android:paddingBottom="@dimen/expert_confirm_introduction_marginTop"
+	        android:paddingLeft="@dimen/expert_filter_layout_padding"
+	        android:paddingRight="@dimen/expert_filter_layout_padding">
+	        
+	        <RelativeLayout android:id="@+id/layoutMoreUpdate"  
+	            android:layout_width="fill_parent"
+	        	android:layout_height="@dimen/expert_filter_layout_height"
+	        	android:background="@drawable/expert_filter_button_background_header_selector"
+	        	android:clickable="true">
+	            
+	            <ImageView 
+					android:layout_alignParentRight="true"
+			        android:layout_marginRight="@dimen/list_item_department_arraw_marginRight"
+			        android:layout_height="fill_parent"
+			        android:layout_width="@dimen/list_item_department_arraw_width"
+			        android:scaleType="fitCenter"
+			        android:adjustViewBounds="true"
+			        android:contentDescription="@null"
+			        android:src="@drawable/list_item_arrow"
+			        android:layout_marginBottom="@dimen/list_divider_height"/>
+	            
+	            <TextView
+					style="@style/list_item_department_title" 
+					android:layout_width="wrap_content"
+				    android:layout_height="fill_parent"
+					android:layout_marginLeft="@dimen/expert_filter_title_marginLeft"
+					android:text="@string/more_update" />
+	            
+	        </RelativeLayout>
+	        
+	        <RelativeLayout android:id="@+id/layoutMoreAgreement"  
+	            android:layout_width="fill_parent"
+	        	android:layout_height="@dimen/expert_filter_layout_height"
+	        	android:background="@drawable/expert_filter_button_background_other_selector"
+	        	android:clickable="true">
+	            
+	            <ImageView 
+					android:layout_alignParentRight="true"
+			        android:layout_marginRight="@dimen/list_item_department_arraw_marginRight"
+			        android:layout_height="fill_parent"
+			        android:layout_width="@dimen/list_item_department_arraw_width"
+			        android:scaleType="fitCenter"
+			        android:adjustViewBounds="true"
+			        android:contentDescription="@null"
+			        android:src="@drawable/list_item_arrow"
+			        android:layout_marginBottom="@dimen/list_divider_height"/>
+	            
+	            <TextView
+					style="@style/list_item_department_title" 
+					android:layout_width="wrap_content"
+				    android:layout_height="fill_parent"
+					android:layout_marginLeft="@dimen/expert_filter_title_marginLeft"
+					android:text="@string/more_agreement" />
+	            
+	        </RelativeLayout>
+	        <!-- 
+	        <RelativeLayout android:id="@+id/layoutMoreAbout" 
+	            android:layout_width="fill_parent"
+	        	android:layout_height="@dimen/expert_filter_layout_height"
+	        	android:background="@drawable/expert_filter_button_background_other_selector"
+	        	android:clickable="true">
+	            
+	            <ImageView 
+					android:layout_alignParentRight="true"
+			        android:layout_marginRight="@dimen/list_item_department_arraw_marginRight"
+			        android:layout_height="fill_parent"
+			        android:layout_width="@dimen/list_item_department_arraw_width"
+			        android:scaleType="fitCenter"
+			        android:adjustViewBounds="true"
+			        android:contentDescription="@null"
+			        android:src="@drawable/list_item_arrow"
+			        android:layout_marginBottom="@dimen/list_divider_height"/>
+	            
+	            <TextView
+					style="@style/list_item_department_title" 
+					android:layout_width="wrap_content"
+				    android:layout_height="fill_parent"
+					android:layout_marginLeft="@dimen/expert_filter_title_marginLeft"
+					android:text="@string/more_about" />
+	            
+	        </RelativeLayout>
+	        -->
+	        <RelativeLayout android:id="@+id/layoutMoreQuestion" 
+	            android:layout_width="fill_parent"
+	        	android:layout_height="@dimen/expert_filter_layout_height"
+	        	android:background="@drawable/expert_filter_button_background_other_selector"
+	        	android:clickable="true">
+	            
+	            <ImageView 
+					android:layout_alignParentRight="true"
+			        android:layout_marginRight="@dimen/list_item_department_arraw_marginRight"
+			        android:layout_height="fill_parent"
+			        android:layout_width="@dimen/list_item_department_arraw_width"
+			        android:scaleType="fitCenter"
+			        android:adjustViewBounds="true"
+			        android:contentDescription="@null"
+			        android:src="@drawable/list_item_arrow"
+			        android:layout_marginBottom="@dimen/list_divider_height"/>
+	            
+	            <TextView
+					style="@style/list_item_department_title" 
+					android:layout_width="wrap_content"
+				    android:layout_height="fill_parent"
+					android:layout_marginLeft="@dimen/expert_filter_title_marginLeft"
+					android:text="@string/more_question" />
+	            
+	        </RelativeLayout>
+	        <RelativeLayout android:id="@+id/layoutMoreHelp" 
+	            android:layout_width="fill_parent"
+	        	android:layout_height="@dimen/expert_filter_layout_height"
+	        	android:background="@drawable/expert_filter_button_background_other_selector"
+	        	android:clickable="true">
+	            
+	            <ImageView 
+					android:layout_alignParentRight="true"
+			        android:layout_marginRight="@dimen/list_item_department_arraw_marginRight"
+			        android:layout_height="fill_parent"
+			        android:layout_width="@dimen/list_item_department_arraw_width"
+			        android:scaleType="fitCenter"
+			        android:adjustViewBounds="true"
+			        android:contentDescription="@null"
+			        android:src="@drawable/list_item_arrow"
+			        android:layout_marginBottom="@dimen/list_divider_height"/>
+	            
+	            <TextView
+					style="@style/list_item_department_title" 
+					android:layout_width="wrap_content"
+				    android:layout_height="fill_parent"
+					android:layout_marginLeft="@dimen/expert_filter_title_marginLeft"
+					android:text="@string/more_help" />
+	            
+	        </RelativeLayout>
+	        
+	        
+	    </LinearLayout>
+    
+	</ScrollView>
+	    
+</LinearLayout>

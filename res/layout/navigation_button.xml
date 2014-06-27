@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" 
+   	android:layout_height="fill_parent" >
+   	
+    <Button android:id="@+id/buttonNavigationButton"
+		android:layout_width="@dimen/navigation_button_width"
+   		android:layout_height="fill_parent"
+   		android:background="@drawable/main_navigation_button_background_selector"
+   		android:layout_alignParentRight="true" />
+    
+    <TextView android:id="@+id/textNavigationButton"
+	    android:layout_width="wrap_content"
+   		android:layout_height="fill_parent"
+   		android:layout_marginRight="@dimen/navigation_button_text_marginRight"
+   		android:layout_alignParentRight="true"
+   		style="@style/navigation_return" />
+
+</RelativeLayout>
+
+	

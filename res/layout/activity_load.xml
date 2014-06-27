@@ -1,0 +1,15 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:background="@drawable/load_background" >
+
+    <TextView
+        android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:layout_alignParentBottom="true"
+		android:paddingBottom="@dimen/load_text_copyright_marginBottom"
+		android:gravity="center"
+		android:text="@string/about_copyright"
+		style="@style/load_text_copyright" />
+    
+</RelativeLayout>

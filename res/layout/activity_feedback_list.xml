@@ -1,0 +1,94 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background">
+    
+    <RelativeLayout
+	    android:layout_width="fill_parent" 
+	    android:layout_height="@dimen/main_navigation_layout_height" 
+    	android:background="@color/main_navigation_background">
+        
+	    <include layout="@layout/navigation_cover" />
+	    
+        <include layout="@layout/navigation_return" />
+        
+        <include layout="@layout/navigation_title" />
+        
+        <include layout="@layout/navigation_add" />
+        
+    </RelativeLayout>
+     
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+    	android:layout_height="@dimen/expert_detail_schedule_title_height"
+   		android:background="@drawable/main_background_repeat">
+    
+	    <LinearLayout 
+	        android:layout_width="fill_parent"
+	    	android:layout_height="fill_parent"
+	    	android:layout_marginTop="@dimen/expert_detail_schedule_title_marginTop"
+	    	android:paddingLeft="@dimen/list_item_department_title_marginLeft"
+			android:paddingRight="@dimen/list_item_department_title_marginRight"
+			android:background="@drawable/expert_detail_schedule_title_background"
+	    	android:baselineAligned="false"
+	    	android:orientation="horizontal">
+	    	
+	        <RelativeLayout 
+	            android:layout_width="fill_parent"
+			    android:layout_height="fill_parent" 
+			    android:layout_weight="1">
+	            
+	            <TextView
+					style="@style/expert_detail_schedule_title" 
+					android:layout_width="wrap_content"
+				    android:layout_height="fill_parent" 
+				    android:text="@string/user_feedback_date"
+				    android:background="@drawable/expert_detail_schedule_text_background" 
+				    android:paddingLeft="@dimen/expert_detail_schedule_text_paddingLeftRight"
+				    android:paddingRight="@dimen/expert_detail_schedule_text_paddingLeftRight"
+				    android:layout_centerInParent="true"/>
+	            
+	        </RelativeLayout>
+	        
+	        <RelativeLayout 
+	            android:layout_width="fill_parent"
+			    android:layout_height="fill_parent" 
+			    android:layout_weight="1.2">
+	        
+		        <TextView
+					style="@style/expert_detail_schedule_title" 
+					android:layout_width="wrap_content"
+				    android:layout_height="fill_parent" 
+				    android:text="@string/user_feedback_name"
+				    android:background="@drawable/expert_detail_schedule_text_background" 
+				    android:paddingLeft="@dimen/expert_detail_schedule_text_paddingLeftRight"
+				    android:paddingRight="@dimen/expert_detail_schedule_text_paddingLeftRight"
+				    android:layout_centerInParent="true"/>
+		    
+	        </RelativeLayout>
+	        
+	        <RelativeLayout 
+	            android:layout_width="fill_parent"
+			    android:layout_height="fill_parent" 
+			    android:layout_weight="1.2">
+		        
+			    <TextView
+					style="@style/expert_detail_schedule_title" 
+					android:layout_width="wrap_content" 
+					android:layout_height="fill_parent" 
+					android:text="@string/user_feedback_readonly"
+					android:background="@drawable/expert_detail_schedule_text_background" 
+					android:paddingLeft="@dimen/expert_detail_schedule_text_paddingLeftRight"
+				    android:paddingRight="@dimen/expert_detail_schedule_text_paddingLeftRight"
+				    android:layout_centerInParent="true"/>
+	    
+		    </RelativeLayout>
+			    
+	    </LinearLayout>
+    
+    </RelativeLayout>
+    
+    <include layout="@layout/list_pull_refresh" />
+    
+</LinearLayout>

@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:orientation="vertical">
+
+  	<RelativeLayout
+	    android:layout_width="fill_parent" 
+	    android:layout_height="@dimen/main_navigation_layout_height" 
+    	android:layout_weight="0" 
+    	android:background="@color/main_navigation_background">
+        
+	    <include layout="@layout/navigation_cover" />
+	    
+        <include layout="@layout/navigation_title" />
+        
+    </RelativeLayout>
+
+    <com.legoo.haier.Extension.UltraIdeal.PullRefresh.PullToRefreshScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:scrollbars="none"
+    	android:overScrollMode="never" 
+    	android:background="@color/background"
+    	android:layout_weight="1">
+
+    </com.legoo.haier.Extension.UltraIdeal.PullRefresh.PullToRefreshScrollView>
+    
+    <include layout="@layout/main_toolbar"
+        android:layout_weight="0"/>
+    
+</LinearLayout>

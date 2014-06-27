@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:id="@+id/buttonMainNavigationAdd"
+	android:layout_width="@dimen/main_navigation_button_width"
+   	android:layout_height="fill_parent"
+   	android:paddingTop="@dimen/main_navigation_button_paddingTopBottom"
+   	android:paddingBottom="@dimen/main_navigation_button_paddingTopBottom"
+   	android:layout_marginRight="@dimen/navigation_return_icon_marginLeft"
+   	android:layout_alignParentRight="true"
+   	android:scaleType="fitCenter"
+   	android:contentDescription="@null"
+   	android:adjustViewBounds="true"
+   	android:background="@drawable/main_navigation_button_background_selector"
+   	android:text="@string/public_add"
+   	style="@style/navigation_return" />

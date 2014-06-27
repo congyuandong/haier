@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.legoo.haier.Extension.UltraIdeal.PullRefresh.PullToRefreshListView
+	xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:id="@+id/listView" 
+	android:layout_height="fill_parent" 
+	android:layout_width="fill_parent" 
+	android:choiceMode="singleChoice" 
+	android:divider="@null" 
+	android:dividerHeight="0dip" 
+	android:fadeScrollbars="true" 
+	android:requiresFadingEdge="vertical"
+	android:cacheColorHint="@color/background" 
+	android:background="@color/background" />
+
+	

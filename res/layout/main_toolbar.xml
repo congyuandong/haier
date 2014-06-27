@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent"
+   	android:layout_height="@dimen/main_toolbar_layout_height"
+   	android:orientation="horizontal"
+   	android:background="@color/main_toolbar_background" >
+        
+    <ImageButton android:id="@+id/buttonMainToolbarUser"
+        android:layout_width="@dimen/main_navigation_button_width"
+   		android:layout_height="fill_parent"
+   		android:paddingTop="@dimen/main_toolbar_button_paddingTopBottom"
+   		android:paddingBottom="@dimen/main_toolbar_button_paddingTopBottom"
+   		android:scaleType="fitCenter"
+   		android:contentDescription="@null"
+   		android:adjustViewBounds="true"
+   		android:src="@drawable/main_toolbar_button_user_selector"
+   		android:background="@drawable/main_toolbar_button_background_selector"
+   		android:layout_weight="1"/>
+        
+	<View 
+        android:layout_width="@dimen/main_navigation_divider_width"
+		android:layout_height="fill_parent"
+		android:layout_marginTop="@dimen/main_toolbar_divider_paddingTopBottom"
+		android:layout_marginBottom="@dimen/main_toolbar_divider_paddingTopBottom"
+        android:background="@color/main_navigation_divider"
+        android:layout_weight="0"/>
+        
+    <ImageButton android:id="@+id/buttonMainToolbarMore"
+        android:layout_width="@dimen/main_navigation_button_width"
+		android:layout_height="fill_parent"
+		android:paddingTop="@dimen/main_toolbar_button_paddingTopBottom"
+		android:paddingBottom="@dimen/main_toolbar_button_paddingTopBottom"
+		android:scaleType="fitCenter"
+		android:contentDescription="@null"
+		android:adjustViewBounds="true"
+		android:src="@drawable/main_toolbar_button_more_selector"
+		android:background="@drawable/main_toolbar_button_background_selector"
+		android:layout_weight="1"/>
+        
+</LinearLayout>
