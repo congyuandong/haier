@@ -7,6 +7,8 @@ import com.legoo.haier.Archon.TaskArchon.OnCancelListener;
 import com.legoo.haier.Archon.TaskArchon.OnConfirmListener;
 import com.legoo.haier.Archon.TaskArchon.OnLoadedListener;
 import com.legoo.haier.AsyncTask.HelpAsyncTask;
+import com.legoo.haier.AsyncTask.QuestionAsyncTask;
+import com.legoo.haier.AsyncTask.RecommendAsyncTask;
 import com.legoo.haier.AsyncTask.Base.JsonEvent;
 import com.legoo.haier.AsyncTask.Callback.ModelEvent;
 import com.legoo.haier.Model.LinkModel;
@@ -15,12 +17,10 @@ import android.graphics.Color;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.TextView;
 import android.widget.ZoomButtonsController;
 
 /**
@@ -53,10 +53,10 @@ public class LinkDetailActivity extends NavigationActivity
 	{
 		verifyExtras();
 		super.onCreate(savedInstanceState, R.layout.activity_link_web);
+		initView();
 		initWebView();
 		initTask();
 		loadData();
-		initView();
 	}
 	
 	@SuppressLint({ "SetJavaScriptEnabled", "NewApi" })
@@ -156,17 +156,15 @@ public class LinkDetailActivity extends NavigationActivity
 	
 	private void loadData()
 	{
-//		_taskArchon.executeAsyncTask(_type == TYPE_SERVICE ? new ServiceDetailAsyncTask(_id) : new TcmDetailAsyncTask(_id));
-		
 		switch (type) {
 		case TYPE_HELP:
 			_taskArchon.executeAsyncTask(new HelpAsyncTask());
 			break;
 		case TYPE_QUESTION:
-			_taskArchon.executeAsyncTask(new HelpAsyncTask());			
+			_taskArchon.executeAsyncTask(new QuestionAsyncTask());			
 			break;
 		case TYPE_RECOMMEND:
-			_taskArchon.executeAsyncTask(new HelpAsyncTask());			
+			_taskArchon.executeAsyncTask(new RecommendAsyncTask());			
 			break;
 		default:
 			finish();

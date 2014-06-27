@@ -21,16 +21,16 @@ import com.legoo.haier.Model.UserModel;
  */
 public class LoginAsyncTask extends NetworkAsyncTask 
 {
-	private static final String ACCOUNT = "LOGID";
+	private static final String NAME = "NAME";
 	private static final String PASSWORD = "PASSWORD";
 	
-	private String _account;
+	private String name;
 	private String _password;
 	
 	public LoginAsyncTask(String account, String password)
 	{
 		super();
-		_account = account;
+		name = account;
 		_password = password;
 	}
 	
@@ -39,8 +39,7 @@ public class LoginAsyncTask extends NetworkAsyncTask
 	{   
 		ModelEvent event = new ModelEvent(this);
 		event.setMark(super.getMark());
-//		String url = Haier.getInstance().getDataService().getAuthenticate();\
-		String url = "";
+		String url = Haier.getInstance().getDataService().postLogin();
 		if (url != null)
 		{
 			List<NameValuePair> pairs = new ArrayList<NameValuePair>(); 

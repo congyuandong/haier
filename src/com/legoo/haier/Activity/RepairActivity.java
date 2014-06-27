@@ -8,6 +8,7 @@ import com.legoo.haier.Archon.TaskArchon.OnCheckInputListener;
 import com.legoo.haier.Archon.TaskArchon.OnConfirmListener;
 import com.legoo.haier.Archon.TaskArchon.OnLoadedListener;
 import com.legoo.haier.Archon.TaskArchon.OnSucessedListener;
+import com.legoo.haier.AsyncTask.RepairTVAsyncTask;
 import com.legoo.haier.AsyncTask.Base.JsonEvent;
 
 import android.content.Intent;
@@ -70,7 +71,6 @@ public class RepairActivity extends NavigationActivity
 	{
 		_taskArchon = new TaskArchon(this, TaskArchon.ACCESS_TYPE_SUBMIT, true);
 		_taskArchon.setWaittingEnabled(true);
-		_taskArchon.setSubmitButton(R.id.buttonUserRegisterSubmit);
 		_taskArchon.setOnLoadedListener(new OnLoadedListener() 
 		{
 			@Override
@@ -100,6 +100,7 @@ public class RepairActivity extends NavigationActivity
 	
 	private void submit()
 	{
+		_taskArchon.executeAsyncTask(new RepairTVAsyncTask());
 	}
 	
 	private void checkLogin()

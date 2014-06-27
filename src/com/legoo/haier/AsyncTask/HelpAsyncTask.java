@@ -3,7 +3,6 @@ package com.legoo.haier.AsyncTask;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
 import com.legoo.haier.Application.Haier;
 import com.legoo.haier.AsyncTask.Base.JsonEvent;
 import com.legoo.haier.AsyncTask.Base.NetworkAsyncTask;
@@ -20,15 +19,12 @@ import com.legoo.haier.Handler.Json.JsonOperation;
  */
 public class HelpAsyncTask extends NetworkAsyncTask 
 {
-	private static final String INFO_ID = "info_id";
 	
-	private String info_id;
 
 	
 	public HelpAsyncTask()
 	{
 		super();
-		info_id = "1";
 	}
 	
 	@Override
@@ -36,12 +32,10 @@ public class HelpAsyncTask extends NetworkAsyncTask
 	{   
 		JsonEvent event = new JsonEvent(this);
 		event.setMark(super.getMark());
-//		String url = Haier.getInstance().getDataService().getRegister();
-		String url = "";
+		String url = Haier.getInstance().getDataService().getHelp();
 		if (url != null)
 		{
 			List<NameValuePair> pairs = new ArrayList<NameValuePair>(); 
-		    pairs.add(new BasicNameValuePair(INFO_ID, info_id));
 		    
 			ValueJsonHandler handler;
 			do

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import org.apache.http.NameValuePair;
 import com.legoo.haier.Application.Haier;
-import com.legoo.haier.AsyncTask.Base.JsonEvent;
 import com.legoo.haier.AsyncTask.Base.NetworkAsyncTask;
+import com.legoo.haier.AsyncTask.Callback.ModelEvent;
 import com.legoo.haier.Handler.ValueJsonHandler;
 import com.legoo.haier.Handler.Json.JsonHandler;
 import com.legoo.haier.Handler.Json.JsonOperation;
@@ -17,21 +17,21 @@ import com.legoo.haier.Handler.Json.JsonOperation;
  * @version 1.0
  * @date 2014-02-15
  */
-public class RecommendAsyncTask extends NetworkAsyncTask 
+public class RepairTVAsyncTask extends NetworkAsyncTask 
 {
 
 	
-	public RecommendAsyncTask()
+	public RepairTVAsyncTask()
 	{
 		super();
 	}
 	
 	@Override
-	protected JsonEvent doInBackground(Void... params) 
+	protected ModelEvent doInBackground(Void... params) 
 	{   
-		JsonEvent event = new JsonEvent(this);
+		ModelEvent event = new ModelEvent(this);
 		event.setMark(super.getMark());
-		String url = Haier.getInstance().getDataService().getRecommend();
+		String url = Haier.getInstance().getDataService().postRepairTV();
 		if (url != null)
 		{
 			List<NameValuePair> pairs = new ArrayList<NameValuePair>(); 

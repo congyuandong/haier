@@ -51,9 +51,17 @@ public class HaierDataService
 	{
 		return combineUrl(register);		
 	}
-	public String getSampleShow()
+	public String getHelp()
 	{
-		return combineUrl(sampleShow);		
+		return combineUrl(String.format(sampleShow, 1));
+	}
+	public String getQuestion()
+	{
+		return combineUrl(String.format(sampleShow, 1));
+	}
+	public String getRecommend()
+	{
+		return combineUrl(String.format(sampleShow, 1));
 	}
 	public String postBindTV()
 	{
