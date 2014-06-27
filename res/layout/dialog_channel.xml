@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:orientation="vertical"
+	android:layout_height="wrap_content"
+	android:layout_width="fill_parent"
+  	android:background="@drawable/dialog_channel_background">
+     
+	<TextView android:id="@+id/textDialogChannelTitle" 
+		android:layout_height="@dimen/dialog_channel_title_height"
+       	android:layout_width="fill_parent"
+       	style="@style/dialog_channel_title"/>
+     
+	<View 
+ 		android:layout_height="@dimen/dialog_divider_height"
+  		android:layout_width="fill_parent"
+		android:background="@drawable/dialog_divider"/>
+     
+	<com.legoo.haier.Extension.UltraIdeal.BatchListView
+		android:id="@+id/listDialogChannelContent" 
+		android:layout_height="@dimen/dialog_channel_listview_height" 
+		android:layout_width="fill_parent" 
+		android:choiceMode="singleChoice" 
+		android:divider="@null" 
+		android:dividerHeight="0dip" 
+		android:fadeScrollbars="true" 
+		android:requiresFadingEdge="vertical"
+		android:cacheColorHint="@color/background" 
+		android:background="@color/background"
+		android:overScrollMode="never"/>
+     
+</LinearLayout>

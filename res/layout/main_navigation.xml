@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent"
+   	android:layout_height="@dimen/main_navigation_layout_height"
+   	android:orientation="horizontal"
+   	android:background="@color/main_navigation_background">
+       
+	<ImageButton android:id="@+id/buttonMainNavigationMore"
+		android:layout_width="@dimen/main_navigation_button_width"
+   		android:layout_height="fill_parent"
+   		android:paddingTop="@dimen/main_navigation_button_paddingTopBottom"
+   		android:paddingBottom="@dimen/main_navigation_button_paddingTopBottom"
+   		android:scaleType="fitCenter"
+   		android:contentDescription="@null"
+   		android:adjustViewBounds="true"
+   		android:src="@drawable/main_navigation_button_more"
+   		android:background="@drawable/main_navigation_button_background_selector"
+   		android:layout_weight="0"/>
+       
+	<View 
+		android:layout_width="@dimen/main_navigation_divider_width"
+   		android:layout_height="fill_parent"
+   		android:layout_marginTop="@dimen/main_navigation_divider_paddingTopBottom"
+   		android:layout_marginBottom="@dimen/main_navigation_divider_paddingTopBottom"
+        android:background="@color/main_navigation_divider"
+        android:layout_weight="0"/>
+       
+	<ImageView 
+		android:layout_width="fill_parent"
+   		android:layout_height="fill_parent"
+   		android:paddingTop="@dimen/main_navigation_logo_paddingTopBottom"
+   		android:paddingBottom="@dimen/main_navigation_logo_paddingTopBottom"
+   		android:scaleType="fitCenter"
+   		android:contentDescription="@null"
+   		android:adjustViewBounds="true"
+   		android:src="@drawable/main_navigation_logo"
+   		android:layout_weight="1"/>
+       
+	<View 
+		android:layout_width="@dimen/main_navigation_divider_width"
+   		android:layout_height="fill_parent"
+   		android:layout_marginTop="@dimen/main_navigation_divider_paddingTopBottom"
+   		android:layout_marginBottom="@dimen/main_navigation_divider_paddingTopBottom"
+		android:background="@color/main_navigation_divider"
+		android:layout_weight="0"/>
+       
+	<ImageButton android:id="@+id/buttonMainNavigationUser" 
+		android:layout_width="@dimen/main_navigation_button_width"
+   		android:layout_height="fill_parent"
+   		android:paddingTop="@dimen/main_navigation_button_paddingTopBottom"
+   		android:paddingBottom="@dimen/main_navigation_button_paddingTopBottom"
+   		android:scaleType="fitCenter"
+   		android:contentDescription="@null"
+   		android:adjustViewBounds="true"
+   		android:src="@drawable/main_navigation_button_user"
+   		android:background="@drawable/main_navigation_button_background_selector"
+   		android:layout_weight="0"/>
+       
+</LinearLayout>

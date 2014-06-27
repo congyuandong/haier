@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutListItemHeaderFrame"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/list_item_layout_height"
+    android:minHeight="@dimen/list_item_layout_height">
+    
+    <TextView android:id="@+id/textListItemHeader"
+        android:text="@string/list_item_pull_refresh_pull"
+        style="@style/list_item_header" 
+        android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+        android:layout_marginLeft="@dimen/list_item_header_loading_marginLeftRight"
+   		android:layout_marginRight="@dimen/list_item_header_loading_marginLeftRight" />
+    
+    <ImageView android:id="@+id/imageListItemHeaderProgress"
+        android:src="@drawable/public_progress_light"
+        android:contentDescription="@null"
+   		android:layout_width="@dimen/list_item_header_progress_size" 
+   		android:layout_height="@dimen/list_item_header_progress_size" 
+   		android:adjustViewBounds="true" 
+       	android:scaleType="fitCenter"
+        android:visibility="gone"
+        android:layout_marginLeft="@dimen/list_item_header_arraw_marginLeft"
+        android:layout_centerVertical="true" 
+        android:layout_alignParentLeft="true" />
+	    
+    <ImageView android:id="@+id/imageListItemHeaderArraw"
+        android:adjustViewBounds="true" 
+        android:scaleType="fitCenter"
+        android:contentDescription="@null"
+        android:layout_width="@dimen/list_item_header_arraw_height"
+        android:layout_height="@dimen/list_item_header_arraw_height"
+        android:layout_marginLeft="@dimen/list_item_header_arraw_marginLeft"
+        android:layout_centerVertical="true" 
+        android:layout_alignParentLeft="true"/>
+
+    <View
+	    android:id="@+id/viewEdgeBottom"
+	    android:layout_width="fill_parent"
+	    android:layout_height="@dimen/list_item_header_edge_height" 
+	    android:background="@drawable/list_edge_bottom" 
+	    android:layout_alignParentBottom="true"/>
+    
+</RelativeLayout>

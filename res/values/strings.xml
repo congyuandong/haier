@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">海尔电视智能互动服务平台</string> 
+    <string name="dataservice_base">http://218.203.12.53</string> 
+    <string name="dataservice_get_home">InitHome</string>
+    <string name="dataservice_get_departments">zjjs/PhoneKS?PKSID=%1$s</string>
+    <string name="dataservice_get_experts">zjjs/PhoneZJList?K=%1$s&#038;Z=%2$s&#038;Y=%3$s&#038;W=%4$s&#038;pageNo=%5$d&#038;NAME=%6$s&#038;YY=%7$s</string>
+    <string name="dataservice_get_expert_filter">zjjs/PhoneZJData</string>
+    <string name="dataservice_get_expert">zj/PHONE_ZJ?YSID=%1$s</string>
+    <string name="dataservice_get_schedules">zj/InitPB/%1$s</string>
+    <string name="dataservice_get_service_categories">khfw/InitPKHFW</string>
+    <string name="dataservice_get_service_links">khfw/InitCKHFW?PFWMENUID=%1$s</string>
+
+    <string name="dataservice_get_service_detail">khfw/khfwContent?FWMENUID=%1$s</string>
+    <string name="dataservice_get_tcm_categories">zybj/InitPZYBJ</string>
+    <string name="dataservice_get_tcm_links">zybj/InitCZYBJ?PZYBJMENUID=%1$s</string>
+    <string name="dataservice_get_tcm_detail">zybj/zybjContent?ZYBJMENUID=%1$s</string>
+    
+    <string name="dataservice_get_agreement">phoneFwxy</string>
+    <string name="dataservice_get_contact">lxkf</string>
+    <string name="dataservice_get_question_list">getCJWTMenu</string>
+    <string name="dataservice_get_question_detail">getCJWTContent?DZFWMENUID=%1$s</string>
+    <string name="dataservice_get_update">getLastVersion</string>
+    
+    <string name="dataservice_post_reserve">yhgh</string>
+    <string name="dataservice_post_authenticate">login/phonelogin</string>
+    <!--  -->
+    <string name="dataservice_post_modify">myinfo/upphoneinfo</string>
+    <string name="dataservice_post_password_change">mypassword/upPhonePassword</string>
+    <string name="dataservice_post_register">phoneRegister</string>
+    <string name="dataservice_post_costs">myfinance/searchPhone</string>
+    <string name="dataservice_post_costs_daily">myfinance/searchPhoneMX</string>
+    <string name="dataservice_post_reports">myexamination/searchPhone</string>
+    <string name="dataservice_post_reports_detail">myexamination/searchPhoneMXImage</string>
+    <string name="dataservice_post_reports_detail_url">myexamination/searchPhoneMXImage?APPID=%1$s&#038;BGDID=%2$s</string>
+    <string name="dataservice_post_reservations">myyy/PHONEYY</string>
+    <string name="dataservice_post_reservation_cancel">myyy/PHONECancelYY</string>
+    <string name="dataservice_post_contacts">mycylx/phoneSearch</string>
+    <string name="dataservice_post_contacts_update">mycylx/phoneUpdate</string>
+    <string name="dataservice_post_contacts_delete">mycylx/phoneDelete</string>
+    <string name="dataservice_post_contacts_add">mycylx/phoneAdd</string>
+    <string name="dataservice_post_feedback">ydyf/phoneSearch</string>
+    <string name="dataservice_post_feedback_update">ydyf/phoneUpdate</string>
+    <string name="dataservice_post_feedback_delete">ydyf/phoneDel</string>
+    <string name="dataservice_post_feedback_add">ydyf/phoneAdd</string>
+    <string name="dataservice_post_drugs">jbyw/phoneSearch</string>
+    <string name="dataservice_post_verification">cmpp</string>
+    <string name="dataservice_post_query_limit">cxxz</string>
+    
+    <string name="public_add">添加</string>
+    <string name="public_edit">编辑</string>
+    <string name="public_delete">删除</string>
+    <string name="public_search">查找</string>
+    <string name="public_submit">提交</string>
+    <string name="public_cancel">取消</string>
+    <string name="public_confirm">确认</string>
+    
+    <string name="public_name">姓名</string>
+    <string name="public_name_input">姓名：</string>
+    <string name="public_name_hint">请输入姓名</string>
+    <string name="public_idcard">身份证号</string>
+    <string name="public_idcard_input">身份证号：</string>
+    <string name="public_idcard_hint">请输入身份证号</string>
+	<string name="public_telephone">手机号</string>
+	<string name="public_telephone_input">手机号：</string>
+	<string name="public_telephone_hint">请输入手机号</string>
+	<string name="public_email">电子邮件</string>
+	<string name="public_email_input">电子邮件：</string>
+	<string name="public_email_hint">请输入电子邮件</string>
+	<string name="public_date">日期</string>
+	<string name="public_date_input">日期：</string>
+	<string name="public_date_hint">请输入日期</string>
+	
+	<string name="public_my_settings">我的设置</string>
+	<string name="public_my_operation">我的操作</string>
+	<string name="public_my_tv">我的电视</string>
+	<string name="public_my_task">我的任务</string>
+	<string name="public_my_integral">我的积分</string>
+	<string name="public_my_password_change">修改密码</string>
+	<string name="public_my_feedback">意见反馈</string>
+	
+	<string name="public_submit_succeed">您的修改已成功提交</string>
+    
+    <string name="main_notice_title">公告信息：</string>
+    <string name="main_function_title">常用功能</string>
+    
+    <string name="navigation_return">返回</string>
+    <string name="navigation_home">主页</string>
+    <string name="navigation_filter">筛选</string>
+    <string name="navigation_done">完成</string>
+    
+    <string name="navigation_title_user_login">登录</string>
+    <string name="navigation_title_user_center">用户中心</string>
+    <string name="navigation_title_user_modify">个人资料</string>
+    <string name="navigation_title_user_password_change">修改密码</string>
+    <string name="navigation_title_user_register">注册</string>
+	<string name="navigation_title_feedback_detail">意见反馈</string>
+	<string name="navigation_title_feedback_add">意见反馈</string>
+    <string name="navigation_title_more">更多</string>
+    <string name="navigation_title_about">关于</string>
+    <string name="navigation_title_agreement">用户协议</string>
+    <string name="navigation_title_link_detail">详细</string>
+    <string name="navigation_title_question_list">常见问题</string>
+    <string name="navigation_title_question_detail">常见问题</string>
+    <string name="navigation_title_contact">联系客服</string>
+    
+    <string name="user_login_account_hint">用户名</string>
+	<string name="user_login_password_hint">密码</string>
+	<string name="user_login_register">注 册</string>
+    <string name="user_login_logon">登 录</string>
+    <string name="user_login_forget">"<u>忘记密码？</u>"</string>
+	<string name="user_login_logout">退出当前账号</string>
+    <string name="user_login_succeed">用户 %1$s 已登录！</string>
+	
+	
+	<string name="user_register_account">用户名：</string>
+    <string name="user_register_account_hint">输入用户名，5&#8211;16位</string>
+	<string name="user_register_password">密码：</string>
+    <string name="user_register_password_hint">输入密码，5&#8211;16位</string>
+	<string name="user_register_confirm">确认密码：</string>
+    <string name="user_register_confirm_hint">再次输入密码</string>
+    <string name="user_register_submit">确认注册</string>
+    <string name="user_register_submit_succeed">恭喜，新用户注册成功！</string>
+    <string name="user_register_agreement">同意《用户协议》：</string>
+    
+    <string name="user_modify_submit">确认提交</string>
+    <string name="user_modify_submit_succeed">个人资料更改成功！</string>
+    
+    <string name="user_password_old">旧密码：</string>
+    <string name="user_password_old_hint">输入旧密码</string>
+    <string name="user_password_new">新密码：</string>
+    <string name="user_password_new_hint">输入新密码，最少5位</string>
+    <string name="user_password_confirm_hint">再次输入新密码</string>
+    <string name="user_password_submit">确认提交</string>
+    <string name="user_password_submit_succeed">密码修改成功！\n请使用新密码重新登录！</string>
+    
+    <string name="user_feedback_isreadonly">已阅</string>
+    <string name="user_feedback_notreadonly">未阅</string>
+    <string name="user_feedback_value_isreadonly">1</string>
+    <string name="user_feedback_value_notreadonly">0</string>
+    <string name="user_feedback_readonly">状态</string>
+    <string name="user_feedback_detail_readonly">状态：</string>
+    <string name="user_feedback_detail_opinion">意见：</string>
+    <string name="user_feedback_detail_opinion_hint">请输入意见</string>
+    <string name="user_feedback_detail_suggestion">建议：</string>
+    <string name="user_feedback_detail_suggestion_hint">请输入建议</string>
+    
+    
+    <string name="more_update">软件升级</string>
+	<string name="more_declaration">免责声明</string>
+	<string name="more_about">关于我们</string>
+	<string name="more_question">故障排查</string>
+	<string name="more_help">使用帮助</string>
+	<string name="more_contact">联系客服</string>
+	<string name="more_agreement">免责声明</string>
+	<string name="more_feedback">意见反馈</string>
+	<string name="more_consulting">在线咨询</string>
+	<string name="more_repair">一键报修</string>
+	<string name="more_search">站点查询</string>
+    
+    <string name="list_item_loading">正在加载&#8230;</string>
+	<string name="list_item_notice">暂无内容</string>
+	<string name="list_item_channel_all">全部</string>
+	<string name="list_item_pull_refresh_pull">　下拉进行刷新&#8230;</string> 
+	<string name="list_item_pull_refresh_release">　松手后刷新&#8230;</string> 
+	<string name="list_item_pull_refresh_refreshing">　正在加载&#8230;</string> 
+	
+	<string name="list_item_contacts_telephone">手机号：</string>
+	<string name="list_item_contacts_idcard">身份证：</string>
+	
+    <string name="dialog_title">提示信息</string>
+	<string name="dialog_title_channel">请选择&#8230;</string>
+	<string name="dialog_button_confirm">确定</string>
+	<string name="dialog_button_retry">重试</string>
+	<string name="dialog_button_cancel">取消</string>
+	<string name="dialog_button_network">设置</string>
+	<string name="dialog_body_exit">确定退出%1$s？</string>
+	<string name="dialog_do_get">读取数据</string>
+	<string name="dialog_do_submit">提交数据</string>
+	<string name="dialog_body_retry">%1$s出错！\n是否重试？</string>
+	<string name="dialog_body_error">%1$s发生错误！</string>
+	<string name="dialog_body_finish">确定要退出当前内容？</string>
+	<string name="dialog_body_network">无可用的网络连接！</string>
+    <string name="dialog_body_update">检测到可更新版本！\n当前版本：%1$s\n更新版本：%2$s</string>
+    <string name="dialog_button_update">更新</string>
+    
+    <string name="toast_telephone_toshort">手机号码不能少于11位！</string>
+    <string name="toast_email_error">电子邮件格式错误！</string>
+    <string name="toast_idcard_error">身份证号必须是15或者18位！</string>
+    <string name="toast_account_long_error">用户名长度必须是5&#8211;16位！</string>
+    <string name="toast_password_confirm_error">确认密码不匹配！</string>
+    <string name="toast_password_long_error">密码长度必须是5&#8211;16位！</string>
+    <string name="toast_update_none">当前版本：%1$s，暂无可用更新版本！</string>
+    <string name="toast_register_agreement">请确认您已阅读并同意《用户协议》！</string>
+    <string name="toast_verification_code_error">请填写正确的验证码！</string>
+	<string name="toast_verification_code_succeed">短信已发送到%1$s</string>
+    <string name="json_error_format">数据格式错误！</string>
+    <string name="toast_data_long_error">数据过长！</string>
+	
+    <string name="about_button_current">当前版本：%1$s</string>
+    <string name="about_text">"海尔电视智能服务互动平台"</string>
+	<string name="about_copyright">Copyright© 2014, com.legoo All Rights Reserved</string>
+	
+</resources>

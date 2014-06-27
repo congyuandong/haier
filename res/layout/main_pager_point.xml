@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent" >
+    
+    <ImageView 
+        android:duplicateParentState="true"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:src="@drawable/main_pager_point_selector"
+        android:contentDescription="@null"
+        android:layout_width="@dimen/main_pager_point_single_width"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="@dimen/main_pager_point_single_marginLeftRight"
+        android:layout_marginRight="@dimen/main_pager_point_single_marginLeftRight"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>

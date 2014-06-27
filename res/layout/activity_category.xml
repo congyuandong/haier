@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+   
+	<TabHost
+		android:id="@android:id/tabhost" 
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		
+		<LinearLayout
+		    android:orientation="vertical"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:background="@color/background">
+		    
+		    <RelativeLayout
+			    android:layout_width="fill_parent" 
+			    android:layout_height="@dimen/main_navigation_layout_height" 
+		    	android:background="@color/main_navigation_background">
+		        
+			    <include layout="@layout/navigation_cover" />
+			    
+		        <include layout="@layout/navigation_return" />
+		        
+		        <include layout="@layout/navigation_title" />
+		        
+		    </RelativeLayout>
+		     
+		    <HorizontalScrollView 
+		        android:layout_width="fill_parent"
+			    android:layout_height="@dimen/expert_detail_tabwidget_height"
+			    android:scrollbars="none"
+				android:overScrollMode="never"
+				android:fadingEdge="horizontal"
+				android:fadingEdgeLength="@dimen/tab_button_wrap_fadingEdgeLength"
+				android:requiresFadingEdge="horizontal"
+				android:background="@color/tab_button_background_normal" >
+		        
+		        <TabWidget android:id="@android:id/tabs" 
+					android:layout_width="wrap_content" 
+					android:layout_height="fill_parent"
+					android:divider="@null"
+					android:tabStripEnabled="false"
+					android:showDividers="middle"/>
+		        
+		    </HorizontalScrollView>
+		    
+		    <FrameLayout android:id="@android:id/tabcontent"
+			    android:layout_width="fill_parent" 
+			    android:layout_height="fill_parent"  />
+		    
+		</LinearLayout>
+		
+	</TabHost> 
+	
+</RelativeLayout>

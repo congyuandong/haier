@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" 
+   	android:layout_height="fill_parent" 
+   	android:descendantFocusability="blocksDescendants">
+   	
+	<View android:id="@+id/viewNavigationCover"
+		android:layout_height="fill_parent" 
+		android:layout_width="fill_parent" 
+		android:background="@drawable/navigation_background_cover" 
+		android:visibility="gone"/>
+	
+	<ImageButton android:id="@+id/buttonNavigationCover"
+	    android:contentDescription="@null"
+		android:layout_height="fill_parent" 
+		android:layout_width="fill_parent" 
+		android:background="@drawable/no" 
+		android:src="@drawable/no" />
+	
+</RelativeLayout>
+	
