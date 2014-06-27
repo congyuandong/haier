@@ -6,6 +6,7 @@ import com.legoo.haier.Archon.TaskArchon;
 import com.legoo.haier.Archon.TaskArchon.OnCancelListener;
 import com.legoo.haier.Archon.TaskArchon.OnConfirmListener;
 import com.legoo.haier.Archon.TaskArchon.OnLoadedListener;
+import com.legoo.haier.AsyncTask.HelpAsyncTask;
 import com.legoo.haier.AsyncTask.Base.JsonEvent;
 import com.legoo.haier.AsyncTask.Callback.ModelEvent;
 import com.legoo.haier.Model.LinkModel;
@@ -30,31 +31,20 @@ import android.widget.ZoomButtonsController;
  */
 public class LinkDetailActivity extends NavigationActivity
 {
-	public static final String EXTRA_URL = "EXTRA_URL";
 	public static final String EXTRA_TYPE = "EXTRA_TYPE";
-	public static final String EXTRA_KIND = "EXTRA_KIND";
-	public static final String EXTRA_ID = "EXTRA_ID";
 	public static final String EXTRA_TITLE = "EXTRA_TITLE";
-	public static final String EXTRA_MODEL = "EXTRA_MODEL";
 	
-	public static final int TYPE_SERVICE = 0;
-	public static final int TYPE_TCM = 1;
-	
-	public static final int KIND_TEXT = 0;
-	public static final int KIND_LINK = 1;
-	public static final int KIND_TASK = 2;
+	public static final int TYPE_NULL = 0;
+	public static final int TYPE_HELP = 1;
+	public static final int TYPE_QUESTION = 2;
+	public static final int TYPE_RECOMMEND = 3;
 	
 	private static final String WEB_ENCODING = "utf-8";
 	private static final String WEB_MINE_TYPE = "text/html";
 
-	private String _url;
+	private int type;
 	private String _title;
-	private LinkModel _model;
-	private int _kind;
     private WebView _webView;
-	private TextView _textTitle;
-	private TextView _textTime;
-	private TextView _textBody;
 	
     private TaskArchon _taskArchon;
 	
@@ -62,25 +52,10 @@ public class LinkDetailActivity extends NavigationActivity
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 		verifyExtras();
-		if (_kind == KIND_TEXT)
-		{
-			super.onCreate(savedInstanceState, R.layout.activity_link_text);
-			initTextView();
-			initTextData(_model);
-		}
-		else if (_kind == KIND_TASK)
-		{
-			super.onCreate(savedInstanceState, R.layout.activity_link_web);
-			initWebView();
-			initTask();
-			loadData();
-		}
-		else 
-		{
-			super.onCreate(savedInstanceState, R.layout.activity_link_web);
-			initWebView();
-			loadUrl(_url);
-		}
+		super.onCreate(savedInstanceState, R.layout.activity_link_web);
+		initWebView();
+		initTask();
+		loadData();
 		initView();
 	}
 	
@@ -94,10 +69,6 @@ public class LinkDetailActivity extends NavigationActivity
 		_webView.getSettings().setJavaScriptEnabled(true);
 		_webView.getSettings().setSupportZoom(true); 
 		_webView.getSettings().setBuiltInZoomControls(true);
-		
-//		_webView.getSettings().setDefaultZoom(ZoomDensity.MEDIUM);
-//		_webView.getSettings().setLayoutAlgorithm(LayoutAlgorithm.NORMAL);
-//		_webView.getSettings().setUseWideViewPort(true);
 		_webView.getSettings().setLoadWithOverviewMode(true);
 		
 		_webView.getSettings().setDefaultTextEncodingName(WEB_ENCODING);
@@ -127,20 +98,13 @@ public class LinkDetailActivity extends NavigationActivity
 			@Override
 			public boolean shouldOverrideUrlLoading(WebView view, String url) 
 			{
-//				if (url.equalsIgnoreCase("about:blank") == false)
-//				{
-//					loadUrl(url);
-//				}
+				if (url.equalsIgnoreCase("about:blank") == false)
+				{
+					loadUrl(url);
+				}
 				return true;
 			}
 		});
-	}
-	
-	private void initTextView()
-	{
-		_textTitle = (TextView) findViewById(R.id.textLinkDetailTitle);
-		_textTime = (TextView) findViewById(R.id.textLinkDetailTime);
-		_textBody = (TextView) findViewById(R.id.textLinkDetailBody);
 	}
 	
 	private void loadUrl(String url)
@@ -189,23 +153,30 @@ public class LinkDetailActivity extends NavigationActivity
 		_webView.loadDataWithBaseURL(null, model.getBody(), WEB_MINE_TYPE, WEB_ENCODING, null);
 	}
 	
-	private void initTextData(LinkModel model)
-	{
-		_textTitle.setText(model.getTitle());
-		_textTime.setText(model.getTime());
-		_textBody.setText(Html.fromHtml(model.getBody()));
-	}
 	
 	private void loadData()
 	{
 //		_taskArchon.executeAsyncTask(_type == TYPE_SERVICE ? new ServiceDetailAsyncTask(_id) : new TcmDetailAsyncTask(_id));
+		
+		switch (type) {
+		case TYPE_HELP:
+			_taskArchon.executeAsyncTask(new HelpAsyncTask());
+			break;
+		case TYPE_QUESTION:
+			_taskArchon.executeAsyncTask(new HelpAsyncTask());			
+			break;
+		case TYPE_RECOMMEND:
+			_taskArchon.executeAsyncTask(new HelpAsyncTask());			
+			break;
+		default:
+			finish();
+			break;
+		}
 	}
 	
 	private void verifyExtras()
 	{
-		_kind = getIntent().getIntExtra(EXTRA_KIND, KIND_TEXT);
-		_url = getIntent().getStringExtra(EXTRA_URL);
+		type = getIntent().getIntExtra(EXTRA_TYPE, TYPE_NULL);
 		_title = getIntent().getStringExtra(EXTRA_TITLE);
-		_model = (LinkModel) getIntent().getSerializableExtra(EXTRA_MODEL);
 	}
 }
