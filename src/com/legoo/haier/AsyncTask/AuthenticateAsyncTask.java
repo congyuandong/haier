@@ -43,30 +43,40 @@ public class AuthenticateAsyncTask extends NetworkAsyncTask
 		if (url != null)
 		{
 			List<NameValuePair> pairs = new ArrayList<NameValuePair>(); 
-		    pairs.add(new BasicNameValuePair(ACCOUNT, _account));
-		    pairs.add(new BasicNameValuePair(PASSWORD, _password));
-		    
-			UserJsonHandler handler;
-			do
-			{
-				handler = (UserJsonHandler) JsonOperation.post(url, pairs, new UserJsonHandler());
-			}
-			while (retryTask(handler) == true);
+//		    pairs.add(new BasicNameValuePair(ACCOUNT, _account));
+//		    pairs.add(new BasicNameValuePair(PASSWORD, _password));
+//		    
+//			UserJsonHandler handler;
+//			do
+//			{
+//				handler = (UserJsonHandler) JsonOperation.post(url, pairs, new UserJsonHandler());
+//			}
+//			while (retryTask(handler) == true);
+//			
+//			if (handler.getError() == JsonHandler.ERROR_NONE)
+//			{
+//				UserModel model = (UserModel) handler.getModel();
+//				model.setPassword(_password);
+//			}
+			UserModel model = new UserModel();
+			model.setAccount("");
+			model.setEmail("m@m.m");
+			model.setID("m");
+			model.setIDCard("1111");
+			model.setName("test");
+			model.setPassword("password");
+			model.setPasswordMD5("jladskjfl");
+			model.setSex(true);
+			model.setTelephone("1111");
 			
-			if (handler.getError() == JsonHandler.ERROR_NONE)
-			{
-				UserModel model = (UserModel) handler.getModel();
-				model.setPassword(_password);
-			}
-			
-			event.setError(handler.getError());
-			event.setMessage(handler.getMessage());
-			event.setModel(handler.getModel());
+			event.setError(UserJsonHandler.ERROR_NONE);
+			event.setMessage("");
+			event.setModel(model);
 			
 			pairs.clear();
 			pairs = null;
 			url = null;
-			handler = null;
+//			handler = null;
 		}
 		else 
 		{
