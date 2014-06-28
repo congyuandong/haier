@@ -25,7 +25,7 @@
 		android:layout_marginRight="@dimen/main_function_marginLeftRight"
   		android:orientation="horizontal">
         <Button 
-            android:id="@+id/main_fuction_button_1"
+            android:id="@+id/buttonMainFuctionMyTv"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
 	        android:scaleType="fitCenter"
@@ -37,7 +37,7 @@
 		    android:layout_width="@dimen/main_function_button_spacing"
 		    android:layout_weight="0"/>
         <Button 
-            android:id="@+id/main_fuction_button_2"
+            android:id="@+id/buttonMainFuctionMyTask"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
 	        android:scaleType="fitCenter"
@@ -55,24 +55,24 @@
 		android:layout_marginRight="@dimen/main_function_marginLeftRight"
 		android:orientation="horizontal">
         <Button 
-            android:id="@+id/main_fuction_button_3"
+            android:id="@+id/buttonMainFuctionConsulting"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
 	        android:scaleType="fitCenter"
         	android:background="@drawable/expert_filter_button_background_other_selector"
-        	android:text="@string/more_consulting"
+        	android:text="@string/public_consulting"
             android:layout_weight="1" />
 		<View 
 		    android:layout_height="fill_parent"
 		    android:layout_width="@dimen/main_function_button_spacing"
 		    android:layout_weight="0"/>
         <Button 
-            android:id="@+id/main_fuction_button_4"
+            android:id="@+id/buttonMainFuctionOneKeyRepair"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
 	        android:scaleType="fitCenter"
         	android:background="@drawable/expert_filter_button_background_other_selector"
-        	android:text="@string/more_repair"
+        	android:text="@string/public_one_key_repair"
             android:layout_weight="1" />
           
  	</LinearLayout>
@@ -86,7 +86,7 @@
 		android:layout_marginBottom="@dimen/main_function_button_bottem"
 		android:orientation="horizontal">
         <Button 
-            android:id="@+id/main_fuction_button_5"
+            android:id="@+id/buttonMainFuctionQuestion"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
 	        android:scaleType="fitCenter"
@@ -98,7 +98,7 @@
 		    android:layout_width="@dimen/main_function_button_spacing"
 		    android:layout_weight="0"/>
         <Button 
-            android:id="@+id/main_fuction_button_6"
+            android:id="@+id/buttonMainFuctionSearch"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
 	        android:scaleType="fitCenter"

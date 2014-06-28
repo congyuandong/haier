@@ -19,6 +19,7 @@ import android.os.Handler;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageButton;
 /**
  * @class Main Activity
@@ -32,6 +33,14 @@ public class MainActivity extends BaseActivity
 	
 	private ImageButton _buttonToolbarMore;
 	private ImageButton _buttonToolbarUser;
+	
+	private Button buttonMyTV;
+	private Button buttonMyTask;
+	private Button buttonConsulting;
+	private Button buttonOneKeyRepair;
+	private Button buttonQuestion;
+	private Button buttonSearch;
+	
 	
 	private PullToRefreshScrollView _scrollView;
 	private MessageDialog _exitDialog;
@@ -79,7 +88,58 @@ public class MainActivity extends BaseActivity
 		_buttonToolbarMore = (ImageButton) findViewById(R.id.buttonMainToolbarMore);
 		_buttonToolbarUser = (ImageButton) findViewById(R.id.buttonMainToolbarUser);
 		
-		
+		buttonMyTV = (Button)findViewById(R.id.buttonMainFuctionMyTv);
+		buttonMyTask = (Button)findViewById(R.id.buttonMainFuctionMyTask);
+		buttonConsulting = (Button)findViewById(R.id.buttonMainFuctionConsulting);
+		buttonOneKeyRepair = (Button)findViewById(R.id.buttonMainFuctionOneKeyRepair);
+		buttonQuestion = (Button)findViewById(R.id.buttonMainFuctionQuestion);
+		buttonSearch = (Button)findViewById(R.id.buttonMainFuctionSearch);
+
+		buttonMyTV.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				startTargetActivity(MyTVActivity.class, UserLoginActivity.TARGET_MyTv);			
+			}
+		});
+		buttonMyTask.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+//				startTargetActivity(RepairActivity.class, UserLoginActivity.TARGET_REPAIR);	
+			}
+		});
+		buttonConsulting.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+//				startTargetActivity(RepairActivity.class, UserLoginActivity.TARGET_REPAIR);
+			}
+		});
+		buttonOneKeyRepair.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				startTargetActivity(RepairActivity.class, UserLoginActivity.TARGET_REPAIR);
+			}
+		});
+		buttonQuestion.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(MainActivity.this, LinkDetailActivity.class)
+					.putExtra(LinkDetailActivity.EXTRA_TYPE, LinkDetailActivity.TYPE_QUESTION)
+					.putExtra(LinkDetailActivity.EXTRA_TITLE, getString(R.string.more_question))
+					.putExtra(UserLoginActivity.EXTRA_SOURCE, UserLoginActivity.SOURCE_HOME));
+			}
+		});
+		buttonSearch.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+//				startActivity(new Intent(MainActivity.this, LinkDetailActivity.class)
+//				.putExtra(UserLoginActivity.EXTRA_SOURCE, UserLoginActivity.SOURCE_HOME));
+			}
+		});
 		_buttonToolbarUser.setOnClickListener(new OnClickListener()
 		{
 			@Override
@@ -87,8 +147,7 @@ public class MainActivity extends BaseActivity
 			{
 				startTargetActivity(UserCenterActivity.class, UserLoginActivity.TARGET_USER_CENTER);
 			}
-		});
-		
+		});		
 		_buttonToolbarMore.setOnClickListener(new OnClickListener()
 		{
 			@Override

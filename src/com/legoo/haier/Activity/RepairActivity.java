@@ -4,7 +4,6 @@ import com.legoo.haier.R;
 import com.legoo.haier.Activity.Base.NavigationActivity;
 import com.legoo.haier.Application.Haier;
 import com.legoo.haier.Archon.TaskArchon;
-import com.legoo.haier.Archon.TaskArchon.OnCheckInputListener;
 import com.legoo.haier.Archon.TaskArchon.OnConfirmListener;
 import com.legoo.haier.Archon.TaskArchon.OnLoadedListener;
 import com.legoo.haier.Archon.TaskArchon.OnSucessedListener;
@@ -48,7 +47,7 @@ public class RepairActivity extends NavigationActivity
 				checkTV();
 			break;
 			case RESULT_TV:
-				
+				submit();
 			break;
 			}
         } 
@@ -56,7 +55,7 @@ public class RepairActivity extends NavigationActivity
 	
 	private void initView() 
 	{
-		getNavigation().setTitle(getString(R.string.more_repair));
+		getNavigation().setTitle(getString(R.string.public_one_key_repair));
 		buttonSubmit = (Button) findViewById(R.id.repair_submit);
 		buttonSubmit.setOnClickListener(new OnClickListener() {
 			

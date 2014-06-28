@@ -32,7 +32,7 @@
 	        android:paddingBottom="@dimen/expert_confirm_introduction_marginTop"
 	        android:paddingLeft="@dimen/expert_filter_layout_padding"
 	        android:paddingRight="@dimen/expert_filter_layout_padding">
-	        
+	        <!-- 
 	        <RelativeLayout android:id="@+id/layoutMoreUpdate"  
 	            android:layout_width="fill_parent"
 	        	android:layout_height="@dimen/expert_filter_layout_height"
@@ -84,8 +84,7 @@
 					android:text="@string/more_agreement" />
 	            
 	        </RelativeLayout>
-	        <!-- 
-	        <RelativeLayout android:id="@+id/layoutMoreAbout" 
+	        <RelativeLayout android:id="@+id/layoutMoreSearch" 
 	            android:layout_width="fill_parent"
 	        	android:layout_height="@dimen/expert_filter_layout_height"
 	        	android:background="@drawable/expert_filter_button_background_other_selector"
@@ -107,10 +106,9 @@
 					android:layout_width="wrap_content"
 				    android:layout_height="fill_parent"
 					android:layout_marginLeft="@dimen/expert_filter_title_marginLeft"
-					android:text="@string/more_about" />
+					android:text="@string/more_search" />
 	            
-	        </RelativeLayout>
-	        -->
+	        </RelativeLayout> -->
 	        <RelativeLayout android:id="@+id/layoutMoreQuestion" 
 	            android:layout_width="fill_parent"
 	        	android:layout_height="@dimen/expert_filter_layout_height"
@@ -159,31 +157,6 @@
 				    android:layout_height="fill_parent"
 					android:layout_marginLeft="@dimen/expert_filter_title_marginLeft"
 					android:text="@string/more_help" />
-	            
-	        </RelativeLayout>
-	        <RelativeLayout android:id="@+id/layoutMoreSearch" 
-	            android:layout_width="fill_parent"
-	        	android:layout_height="@dimen/expert_filter_layout_height"
-	        	android:background="@drawable/expert_filter_button_background_other_selector"
-	        	android:clickable="true">
-	            
-	            <ImageView 
-					android:layout_alignParentRight="true"
-			        android:layout_marginRight="@dimen/list_item_department_arraw_marginRight"
-			        android:layout_height="fill_parent"
-			        android:layout_width="@dimen/list_item_department_arraw_width"
-			        android:scaleType="fitCenter"
-			        android:adjustViewBounds="true"
-			        android:contentDescription="@null"
-			        android:src="@drawable/list_item_arrow"
-			        android:layout_marginBottom="@dimen/list_divider_height"/>
-	            
-	            <TextView
-					style="@style/list_item_department_title" 
-					android:layout_width="wrap_content"
-				    android:layout_height="fill_parent"
-					android:layout_marginLeft="@dimen/expert_filter_title_marginLeft"
-					android:text="@string/more_search" />
 	            
 	        </RelativeLayout>
 	        <RelativeLayout android:id="@+id/layoutMoreRecommend" 

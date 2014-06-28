@@ -21,6 +21,9 @@ import android.widget.RelativeLayout;
 public class UserCenterActivity extends NavigationActivity
 {
 	private RelativeLayout _layoutUserCenterMytv;
+	private RelativeLayout _layoutConsulting;
+	private RelativeLayout _layoutOnKeyRepair;
+	
 	private Button _buttonLogout;
 	
 	@Override
@@ -33,12 +36,26 @@ public class UserCenterActivity extends NavigationActivity
 	private void initView() 
 	{
 		_layoutUserCenterMytv = (RelativeLayout) findViewById(R.id.layoutUserCenterMytv);
+		_layoutConsulting = (RelativeLayout) findViewById(R.id.layoutUserCenterConsulting);
+		_layoutOnKeyRepair = (RelativeLayout) findViewById(R.id.layoutUserCenterReapir);
 		_buttonLogout = (Button) findViewById(R.id.buttonUserCenterLogout);
 		
 		_layoutUserCenterMytv.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {
 				startActivity(new Intent(UserCenterActivity.this, MyTVActivity.class));
+			}	
+		});
+		_layoutConsulting.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(UserCenterActivity.this, MyTVActivity.class));
+			}	
+		});
+		_layoutOnKeyRepair.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(UserCenterActivity.this, RepairActivity.class));
 			}	
 		});
 		

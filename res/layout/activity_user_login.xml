@@ -57,7 +57,7 @@
             
         </RelativeLayout>
         
-        <RelativeLayout android:id="@+id/layoutMoreDeclaration"  
+        <RelativeLayout
             android:layout_width="fill_parent"
         	android:layout_height="@dimen/expert_filter_layout_height"
         	android:background="@drawable/expert_filter_button_background_other_normal" >

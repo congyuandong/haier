@@ -145,7 +145,7 @@ public class LinkDetailActivity extends NavigationActivity
 
 	private void initView()
 	{
-        getNavigation().setTitle(_title == null || _title.length() == 0 ? getString(R.string.navigation_title_link_detail) : _title);
+        getNavigation().setTitle(_title == null || _title.length() == 0 ? getString(R.string.public_null) : _title);
 	}
 	
 	private void initWebData(LinkModel model)

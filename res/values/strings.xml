@@ -3,7 +3,8 @@
 
     <string name="app_name">海尔电视智能互动服务平台</string> 
     <string name="dataservice_base">http://218.203.12.53</string>
-        
+    
+    <string name="public_null">""</string>
     <string name="public_add">添加</string>
     <string name="public_edit">编辑</string>
     <string name="public_delete">删除</string>
@@ -35,6 +36,8 @@
 	<string name="public_my_integral">我的积分</string>
 	<string name="public_my_password_change">修改密码</string>
 	<string name="public_my_feedback">意见反馈</string>
+	<string name="public_consulting">在线咨询</string>
+	<string name="public_one_key_repair">一键报修</string>
 	
 	<string name="public_submit_succeed">您的修改已成功提交</string>
     
@@ -49,18 +52,9 @@
     <string name="navigation_title_user_login">登录</string>
     <string name="navigation_title_user_center">用户中心</string>
     <string name="navigation_title_user_mytv">我的电视</string>
-    <string name="navigation_title_user_modify">个人资料</string>
     <string name="navigation_title_user_password_change">修改密码</string>
     <string name="navigation_title_user_register">注册</string>
-	<string name="navigation_title_feedback_detail">意见反馈</string>
-	<string name="navigation_title_feedback_add">意见反馈</string>
     <string name="navigation_title_more">更多</string>
-    <string name="navigation_title_about">关于</string>
-    <string name="navigation_title_agreement">用户协议</string>
-    <string name="navigation_title_link_detail">详细</string>
-    <string name="navigation_title_question_list">常见问题</string>
-    <string name="navigation_title_question_detail">常见问题</string>
-    <string name="navigation_title_contact">联系客服</string>
     <string name="navigation_title_user_qrscan">二维码扫描</string>
     
     <string name="user_mytv_bind">一键绑定</string>
@@ -115,8 +109,6 @@
 	<string name="more_contact">联系客服</string>
 	<string name="more_agreement">免责声明</string>
 	<string name="more_feedback">意见反馈</string>
-	<string name="more_consulting">在线咨询</string>
-	<string name="more_repair">一键报修</string>
 	<string name="more_search">站点查询</string>
 	<string name="more_recommend">推荐展示</string>
     

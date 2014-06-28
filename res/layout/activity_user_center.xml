@@ -97,6 +97,7 @@
 					android:text="@string/public_my_tv" />
 	            
 	        </RelativeLayout>
+	        <!-- 
 	        <RelativeLayout android:id="@+id/layoutUserCenterTask"  
 	            android:layout_width="fill_parent"
 	        	android:layout_height="@dimen/expert_filter_layout_height"
@@ -147,31 +148,6 @@
 					android:text="@string/public_my_integral"/>
 	            
 	        </RelativeLayout>
-	        <RelativeLayout android:id="@+id/layoutUserCenterReapir"  
-	            android:layout_width="fill_parent"
-	        	android:layout_height="@dimen/expert_filter_layout_height"
-	        	android:background="@drawable/expert_filter_button_background_header_selector"
-	        	android:clickable="true">
-	            
-	            <ImageView 
-					android:layout_alignParentRight="true"
-			        android:layout_marginRight="@dimen/list_item_department_arraw_marginRight"
-			        android:layout_height="fill_parent"
-			        android:layout_width="@dimen/list_item_department_arraw_width"
-			        android:scaleType="fitCenter"
-			        android:adjustViewBounds="true"
-			        android:contentDescription="@null"
-			        android:src="@drawable/list_item_arrow"
-			        android:layout_marginBottom="@dimen/list_divider_height"/>
-	            
-	            <TextView
-					style="@style/list_item_department_title" 
-					android:layout_width="wrap_content"
-				    android:layout_height="fill_parent"
-					android:layout_marginLeft="@dimen/expert_filter_title_marginLeft"
-					android:text="@string/more_repair"/>
-	            
-	        </RelativeLayout>
 	        <RelativeLayout android:id="@+id/layoutMoreFeedback" 
 	            android:layout_width="fill_parent"
 	        	android:layout_height="@dimen/expert_filter_layout_height"
@@ -197,7 +173,33 @@
 					android:text="@string/more_feedback" />
 	            
 	        </RelativeLayout>
-	        <RelativeLayout android:id="@+id/layoutMoreConsulting" 
+	        -->
+	        <RelativeLayout android:id="@+id/layoutUserCenterReapir"  
+	            android:layout_width="fill_parent"
+	        	android:layout_height="@dimen/expert_filter_layout_height"
+	        	android:background="@drawable/expert_filter_button_background_header_selector"
+	        	android:clickable="true">
+	            
+	            <ImageView 
+					android:layout_alignParentRight="true"
+			        android:layout_marginRight="@dimen/list_item_department_arraw_marginRight"
+			        android:layout_height="fill_parent"
+			        android:layout_width="@dimen/list_item_department_arraw_width"
+			        android:scaleType="fitCenter"
+			        android:adjustViewBounds="true"
+			        android:contentDescription="@null"
+			        android:src="@drawable/list_item_arrow"
+			        android:layout_marginBottom="@dimen/list_divider_height"/>
+	            
+	            <TextView
+					style="@style/list_item_department_title" 
+					android:layout_width="wrap_content"
+				    android:layout_height="fill_parent"
+					android:layout_marginLeft="@dimen/expert_filter_title_marginLeft"
+					android:text="@string/public_one_key_repair"/>
+	            
+	        </RelativeLayout>
+	        <RelativeLayout android:id="@+id/layoutUserCenterConsulting" 
 	            android:layout_width="fill_parent"
 	        	android:layout_height="@dimen/expert_filter_layout_height"
 	        	android:background="@drawable/expert_filter_button_background_other_selector"
@@ -219,7 +221,7 @@
 					android:layout_width="wrap_content"
 				    android:layout_height="fill_parent"
 					android:layout_marginLeft="@dimen/expert_filter_title_marginLeft"
-					android:text="@string/more_consulting" />
+					android:text="@string/public_consulting" />
 	            
 	        </RelativeLayout>
 	        

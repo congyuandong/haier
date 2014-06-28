@@ -64,7 +64,7 @@ public class LoginAsyncTask extends NetworkAsyncTask
 			model.setDeviceid("sssssssss");
 			model.setId("id");
 			
-			event.setError(UserJsonHandler.ERROR_NONE);
+			event.setError(JsonHandler.ERROR_NONE);
 			event.setMessage("");
 			event.setModel(model);
 			
