@@ -21,8 +21,8 @@ import com.legoo.haier.Model.UserModel;
  */
 public class LoginAsyncTask extends NetworkAsyncTask 
 {
-	private static final String NAME = "NAME";
-	private static final String PASSWORD = "PASSWORD";
+	private static final String NAME = "name";
+	private static final String PASSWORD = "password";
 	
 	private String name;
 	private String _password;
@@ -43,35 +43,28 @@ public class LoginAsyncTask extends NetworkAsyncTask
 		if (url != null)
 		{
 			List<NameValuePair> pairs = new ArrayList<NameValuePair>(); 
-//		    pairs.add(new BasicNameValuePair(ACCOUNT, _account));
-//		    pairs.add(new BasicNameValuePair(PASSWORD, _password));
-//		    
-//			UserJsonHandler handler;
-//			do
-//			{
-//				handler = (UserJsonHandler) JsonOperation.post(url, pairs, new UserJsonHandler());
-//			}
-//			while (retryTask(handler) == true);
-//			
-//			if (handler.getError() == JsonHandler.ERROR_NONE)
-//			{
-//				UserModel model = (UserModel) handler.getModel();
-//				model.setPassword(_password);
-//			}
-			UserModel model = new UserModel();
-			model.setName("name");
-			model.setPassword("password");
-			model.setDeviceid("sssssssss");
-			model.setId("id");
+		    pairs.add(new BasicNameValuePair(NAME, name));
+		    pairs.add(new BasicNameValuePair(PASSWORD, _password));
+		    
+			UserJsonHandler handler;
+			do
+			{
+				handler = (UserJsonHandler) JsonOperation.post(url, pairs, new UserJsonHandler());
+			}
+			while (retryTask(handler) == true);
 			
-			event.setError(JsonHandler.ERROR_NONE);
-			event.setMessage("");
-			event.setModel(model);
-			
+			if (handler.getError() == JsonHandler.ERROR_NONE)
+			{
+				UserModel model = (UserModel) handler.getModel();
+				model.setPassword(_password);
+			}
+			event.setError(handler.getError());
+			event.setMessage(handler.getMessage());
+			event.setModel(handler.getModel());
 			pairs.clear();
 			pairs = null;
 			url = null;
-//			handler = null;
+			handler = null;
 		}
 		else 
 		{
@@ -79,4 +72,14 @@ public class LoginAsyncTask extends NetworkAsyncTask
 		}
 		return event;
 	}
+
+//	UserModel model = new UserModel();
+//	model.setName("name");
+//	model.setPassword("password");
+//	model.setDeviceid("sssssssss");
+//	model.setId("id");
+//	
+//	event.setError(JsonHandler.ERROR_NONE);
+//	event.setMessage("");
+//	event.setModel(model);
 }

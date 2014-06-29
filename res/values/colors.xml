@@ -79,5 +79,12 @@
     
     <color name="result_view">#b0000000</color>
     <color name="viewfinder_mask">#60000000</color>
-    <color name="possible_result_points">#c0ffff00</color> 
+    <color name="possible_result_points">#c0ffff00</color>
+    
+    <color name="comment_bar_input">#333333</color>
+	<color name="comment_bar_input_hint">#808080</color>
+	<color name="comment_bar_button_text_normal">#777777</color>
+	<color name="comment_bar_button_text_pressed">#BB0000</color>
+	<color name="comment_bar_submit_text">#666666</color>
+	<color name="comment_bar_submit_shadow">#FFFFFF</color> 
 </resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent"
+	android:layout_height="@dimen/comment_bar_layout_height"
+	android:orientation="horizontal"
+	android:background="@drawable/public_input_background"
+	android:baselineAligned="false"
+	android:id="@+id/layoutCommentBar" >
+        
+    <RelativeLayout android:id="@+id/layoutCommentInput"  
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+        
+        <View 
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:layout_marginLeft="@dimen/comment_bar_border_marginLeft"
+	        android:layout_marginRight="@dimen/comment_bar_border_marginRight"
+	        android:layout_marginTop="@dimen/comment_bar_border_marginTopBottom"
+	        android:layout_marginBottom="@dimen/comment_bar_border_marginTopBottom"
+	        android:background="@drawable/comment_input_background"/>
+	    
+	    <EditText android:id="@+id/textCommentInput"
+	        style="@style/comment_bar_input"
+	        android:hint="@string/comment_bar_input_hint"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:layout_marginLeft="@dimen/comment_bar_input_marginLeft"
+	        android:layout_marginRight="@dimen/comment_bar_input_marginRight" 
+	        android:background="@null"
+            android:imeOptions="actionDone"
+            android:cursorVisible="true"
+            android:textCursorDrawable="@drawable/more_user_input_edit_cursor"
+	        android:clickable="true"/>
+	    
+	    <RelativeLayout android:id="@+id/layoutCommentImage" 
+	        android:layout_width="@dimen/comment_bar_image_layout_width"
+	        android:layout_height="fill_parent"
+	        android:layout_marginRight="@dimen/comment_bar_image_layout_marginRight"
+	        android:layout_alignParentRight="true"
+	        android:clickable="true">
+	        
+	        <ImageView android:id="@+id/imageCommentImage" 
+	            android:layout_width="@dimen/comment_bar_image_layout_width"
+	        	android:layout_height="fill_parent"
+	        	android:layout_marginLeft="@dimen/comment_bar_image_marginLeftRight"
+	        	android:layout_marginRight="@dimen/comment_bar_image_marginLeftRight"
+		        android:layout_marginTop="@dimen/comment_bar_image_marginTopBottom"
+		        android:layout_marginBottom="@dimen/comment_bar_image_marginTopBottom"
+		        android:adjustViewBounds="true"
+		        android:contentDescription="@null"
+		        android:scaleType="fitXY"
+		        android:src="@drawable/comment_button_image_add_selector"
+		        android:duplicateParentState="true"/>
+	        
+	    </RelativeLayout>
+    
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:layout_width="@dimen/comment_bar_button_layout_width"
+        android:layout_height="fill_parent"
+        android:layout_weight="0">
+        
+        <RelativeLayout android:id="@+id/layoutCommentSubmit" 
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:visibility="visible">
+	        
+	        <Button android:id="@+id/buttonCommentSubmit" 
+	            android:layout_width="@dimen/comment_bar_submit_button_width" 
+	            android:layout_height="@dimen/comment_bar_submit_button_height"
+	        	android:layout_centerInParent="true"
+	        	style="@style/comment_bar_submit_text"
+	        	android:text="@string/comment_bar_submit"
+		        android:background="@drawable/comment_button_submit_selector"/>
+	        
+	    </RelativeLayout>
+	    
+       <RelativeLayout android:id="@+id/layoutCommentProgress" 
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+        	android:visibility="invisible">
+            
+            <ImageView android:id="@+id/imageCommentProgress" 
+	            android:layout_width="@dimen/comment_bar_progress_iamge_size" 
+	            android:layout_height="@dimen/comment_bar_progress_iamge_size"
+	        	android:layout_centerInParent="true"
+		        android:adjustViewBounds="true"
+		        android:scaleType="fitCenter"
+		        android:contentDescription="@null"
+		        android:src="@drawable/public_progress_light" />
+        
+        </RelativeLayout>
+        
+    </RelativeLayout>
+    
+</LinearLayout>

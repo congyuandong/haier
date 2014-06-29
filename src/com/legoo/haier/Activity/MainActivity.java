@@ -113,14 +113,14 @@ public class MainActivity extends BaseActivity
 			
 			@Override
 			public void onClick(View v) {
-//				startTargetActivity(RepairActivity.class, UserLoginActivity.TARGET_REPAIR);
+				startTargetActivity(ConsultingActivity.class, UserLoginActivity.TARGET_Consulting);
 			}
 		});
 		buttonOneKeyRepair.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				startTargetActivity(RepairActivity.class, UserLoginActivity.TARGET_REPAIR);
+				startTargetActivity(RepairActivity.class, UserLoginActivity.TARGET_OneKeyRepair);
 			}
 		});
 		buttonQuestion.setOnClickListener(new OnClickListener() {

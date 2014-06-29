@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.legoo.haier.Extension.UltraIdeal.KeyboardLinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:layout_weight="1">
+        
+        <LinearLayout 
+            android:orientation="vertical"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent">
+            
+		    <RelativeLayout
+			    android:layout_width="fill_parent" 
+			    android:layout_height="@dimen/main_navigation_layout_height" 
+		    	android:background="@color/main_navigation_background">
+		        
+			    <include layout="@layout/navigation_cover" />
+			    
+		        <include layout="@layout/navigation_return" />
+		        
+		        <include layout="@layout/navigation_title" />
+		        
+		        <include layout="@layout/navigation_progress" />
+		        
+		    </RelativeLayout>
+		     
+		    <RelativeLayout
+		        android:layout_width="fill_parent" 
+			    android:layout_height="fill_parent" 
+			    android:layout_weight="1">
+		        
+		        <ListView
+		            android:id="@+id/listView" 
+					android:layout_height="fill_parent" 
+					android:layout_width="fill_parent" 
+					android:choiceMode="singleChoice" 
+					android:divider="@null" 
+					android:dividerHeight="0dip" 
+					android:cacheColorHint="@color/background" 
+					android:background="@color/background" />
+		        
+		        
+		    </RelativeLayout>
+		    
+        </LinearLayout>
+        
+        <View android:id="@+id/viewCommentCover"
+	        android:background="@color/background" 
+		    android:layout_width="fill_parent"
+			android:layout_height="fill_parent" 
+			android:clickable="true"
+			android:visibility="gone"/>
+        
+    </RelativeLayout>
+    
+    <include layout="@layout/comment_bar" />
+
+</com.legoo.haier.Extension.UltraIdeal.KeyboardLinearLayout>

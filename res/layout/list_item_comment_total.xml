@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/comment_bar_submit_button_height" 
+    android:background="@color/background">
+    
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+    	android:layout_height="fill_parent" 
+    	android:background="@drawable/comment_total_background">
+        
+        <TextView android:id="@+id/textListItemConsulting"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent" />
+        
+    </RelativeLayout>
+    
+</RelativeLayout>

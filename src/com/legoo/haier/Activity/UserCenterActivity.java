@@ -49,7 +49,7 @@ public class UserCenterActivity extends NavigationActivity
 		_layoutConsulting.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(UserCenterActivity.this, MyTVActivity.class));
+				startActivity(new Intent(UserCenterActivity.this, ConsultingActivity.class));
 			}	
 		});
 		_layoutOnKeyRepair.setOnClickListener(new OnClickListener(){

@@ -15,16 +15,15 @@ import com.legoo.haier.Model.UserModel;
  */
 public class UserJsonHandler extends ModelJsonHandler
 {      	
-	public final static String ROOT = "user";
-	
-	public final static String ID = "YHID";
-	public final static String ACCOUNT = "LOGID";
-	public final static String NAME = "XM";
-	public final static String PASSWORD = "PASSWORD";
-	public final static String TELEPHONE = "PHONE";
-	public final static String ID_CARD = "SFZH";
-	public final static String EMAIL = "EMAIL";
-	public final static String DEVICE_ID = "DEVICE_ID";
+//	public final static String ROOT = "user";
+	public final static String RESP = "resp_code";
+	public final static String ID = "userid";
+	public final static String DEVICE_ID = "mac";
+
+	public final static String CODE_SUCCESS = "0";
+	public final static String CODE_PASSWORD = "1";
+	public final static String CODE_USERNAME = "2";
+	public final static String CODE_UNKNOWN = "3";
 	
     public UserJsonHandler() {}
 
@@ -33,12 +32,18 @@ public class UserJsonHandler extends ModelJsonHandler
 	{
 		try
 		{
-			JSONObject rootObject = new JSONObject(content).getJSONObject(ROOT);
+			JSONObject rootObject = new JSONObject(content);
 			UserModel model = new UserModel();
-			model.setId(getString(rootObject, ID));
-			model.setName(getString(rootObject, NAME));
-			model.setDeviceid(getString(rootObject,DEVICE_ID));
-			
+			if(!getString(rootObject, RESP).equals(CODE_SUCCESS))
+			{
+				setError(ERROR_HANDLER);
+				setMessage(getString(rootObject, RESP));
+			}else
+			{
+				model.setId(getString(rootObject, ID));
+				model.setDeviceid(getString(rootObject,DEVICE_ID));
+				setError(ERROR_NONE);
+			}			
 			setModel(model);
 			
             rootObject = null;

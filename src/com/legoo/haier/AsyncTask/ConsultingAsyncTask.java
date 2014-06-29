@@ -3,10 +3,12 @@ package com.legoo.haier.AsyncTask;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+
 import com.legoo.haier.Application.Haier;
+import com.legoo.haier.AsyncTask.Base.JsonEvent;
 import com.legoo.haier.AsyncTask.Base.NetworkAsyncTask;
-import com.legoo.haier.AsyncTask.Callback.ModelEvent;
-import com.legoo.haier.Handler.ValueJsonHandler;
+import com.legoo.haier.Handler.RespJsonHandler;
 import com.legoo.haier.Handler.Json.JsonHandler;
 import com.legoo.haier.Handler.Json.JsonOperation;
 
@@ -19,27 +21,31 @@ import com.legoo.haier.Handler.Json.JsonOperation;
  */
 public class ConsultingAsyncTask extends NetworkAsyncTask 
 {
-
+	private static final String MESSAGE = "message";
+	private static final String USERID = "userid";
+	private String message;
 	
-	public ConsultingAsyncTask()
+	public ConsultingAsyncTask(String message)
 	{
 		super();
+		this.message = message;
 	}
 	
 	@Override
-	protected ModelEvent doInBackground(Void... params) 
+	protected JsonEvent doInBackground(Void... params) 
 	{   
-		ModelEvent event = new ModelEvent(this);
+		JsonEvent event = new JsonEvent(this);
 		event.setMark(super.getMark());
 		String url = Haier.getInstance().getDataService().postConsulting();
 		if (url != null)
 		{
 			List<NameValuePair> pairs = new ArrayList<NameValuePair>(); 
-		    
-			ValueJsonHandler handler;
+		    pairs.add(new BasicNameValuePair(USERID,Haier.getInstance().getUser().getCurrent().getId()));
+		    pairs.add(new BasicNameValuePair(MESSAGE, message));
+			RespJsonHandler handler;
 			do
 			{
-				handler = (ValueJsonHandler) JsonOperation.post(url, pairs, new ValueJsonHandler());
+				handler = (RespJsonHandler) JsonOperation.post(url, pairs, new RespJsonHandler());
 			}
 			while (retryTask(handler) == true);
 			

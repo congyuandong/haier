@@ -3,10 +3,12 @@ package com.legoo.haier.AsyncTask;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+
 import com.legoo.haier.Application.Haier;
 import com.legoo.haier.AsyncTask.Base.NetworkAsyncTask;
 import com.legoo.haier.AsyncTask.Callback.ModelEvent;
-import com.legoo.haier.Handler.ValueJsonHandler;
+import com.legoo.haier.Handler.RepairTVJsonHandler;
 import com.legoo.haier.Handler.Json.JsonHandler;
 import com.legoo.haier.Handler.Json.JsonOperation;
 
@@ -19,7 +21,8 @@ import com.legoo.haier.Handler.Json.JsonOperation;
  */
 public class RepairTVAsyncTask extends NetworkAsyncTask 
 {
-
+	private static final String DEVICEID = "mac";
+	private static final String USERID  = "userid";
 	
 	public RepairTVAsyncTask()
 	{
@@ -35,17 +38,19 @@ public class RepairTVAsyncTask extends NetworkAsyncTask
 		if (url != null)
 		{
 			List<NameValuePair> pairs = new ArrayList<NameValuePair>(); 
+			pairs.add(new BasicNameValuePair(USERID, Haier.getInstance().getUser().getCurrent().getId()));
+		    pairs.add(new BasicNameValuePair(DEVICEID, Haier.getInstance().getUser().getCurrent().getDeviceid()));
 		    
-			ValueJsonHandler handler;
+			RepairTVJsonHandler handler;
 			do
 			{
-				handler = (ValueJsonHandler) JsonOperation.post(url, pairs, new ValueJsonHandler());
+				handler = (RepairTVJsonHandler) JsonOperation.post(url, pairs, new RepairTVJsonHandler());
 			}
 			while (retryTask(handler) == true);
 			
 			event.setError(handler.getError());
 			event.setMessage(handler.getMessage());
-
+			event.setModel(handler.getModel());
 			pairs.clear();
 			pairs = null;
 			url = null;

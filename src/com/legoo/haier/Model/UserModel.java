@@ -49,6 +49,6 @@ public class UserModel extends BaseModel implements ModelInterface
 	}
 	public boolean isRegister()
 	{
-		return deviceid!=null&&deviceid.equals("");
+		return deviceid!=null&&!deviceid.equals("");
 	}
 }

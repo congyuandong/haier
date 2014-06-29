@@ -19,6 +19,7 @@ public class HaierDataService
 	private String sampleShow;
 	private String bindTV;
 	private String repairTV;
+	private String repairTVResult;
 	private String consulting;
 	private String consultingList;
 	
@@ -29,18 +30,19 @@ public class HaierDataService
 	{
 		this._application = application;
 		initDataService();
-		login = "";
-		register = "";
-		sampleShow = "";
-		bindTV = "";
-		repairTV = "";
-		consulting = "";
-		consultingList = "";
+		login = "customer/loginCustomer.action";
+		register = "customer/regeditCustomer.action";
+		sampleShow = "binding/ShowMsg.action?info_id=%1$s";
+		bindTV = "binding/bindMac.action";
+		repairTV = "repair/shenqingBaoxiu.action";
+		repairTVResult = "repair/lookResult.action";
+		consulting = "onlinemessage/addOnlineMess.action";
+		consultingList = "onlinemessage/searchOnlineMess.action";
 	}
 	
 	private void initDataService()
 	{
-		_base = _application.getString(R.string.dataservice_base);		
+		_base = "http://222.171.251.98:8090/Haier";		
 	}
 	
 	public String postLogin()
@@ -53,15 +55,15 @@ public class HaierDataService
 	}
 	public String getHelp()
 	{
-		return combineUrl(String.format(sampleShow, 1));
+		return combineUrl(String.format(sampleShow, "1"));
 	}
 	public String getQuestion()
 	{
-		return combineUrl(String.format(sampleShow, 1));
+		return combineUrl(String.format(sampleShow, "2"));
 	}
 	public String getRecommend()
 	{
-		return combineUrl(String.format(sampleShow, 1));
+		return combineUrl(String.format(sampleShow, "3"));
 	}
 	public String postBindTV()
 	{
@@ -71,6 +73,10 @@ public class HaierDataService
 	{
 		return combineUrl(repairTV);		
 	}
+	public String postRepairTVResult()
+	{
+		return combineUrl(repairTVResult);
+	}
 	public String postConsulting()
 	{
 		return combineUrl(consulting);		
@@ -79,6 +85,7 @@ public class HaierDataService
 	{
 		return combineUrl(consultingList);		
 	}
+	
 	
 	private String combineUrl(String uri)
 	{

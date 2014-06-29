@@ -9,6 +9,8 @@ import com.legoo.haier.Archon.TaskArchon.OnLoadedListener;
 import com.legoo.haier.Archon.TaskArchon.OnSucessedListener;
 import com.legoo.haier.AsyncTask.RepairTVAsyncTask;
 import com.legoo.haier.AsyncTask.Base.JsonEvent;
+import com.legoo.haier.AsyncTask.Callback.ModelEvent;
+import com.legoo.haier.Model.RepairTVModel;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,6 +38,7 @@ public class RepairActivity extends NavigationActivity
 		initView();
 		initTask();
 	}
+	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) 
 	{  
@@ -61,8 +64,7 @@ public class RepairActivity extends NavigationActivity
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				checkLogin();
+				checkTV();
 			}
 		});
 	}
@@ -75,7 +77,11 @@ public class RepairActivity extends NavigationActivity
 			@Override
 			public void OnLoaded(final JsonEvent event) 
 			{
-				_taskArchon.showSucessDialog(getString(R.string.user_register_submit_succeed));
+				RepairTVModel model = (RepairTVModel)((ModelEvent)event).getModel();
+				if(model.getCode().equals("0"))
+				{
+					_taskArchon.showSucessDialog(getString(R.string.public_submit_succeed));					
+				}
 			}
 		});
 		_taskArchon.setOnSucessedListener(new OnSucessedListener()
@@ -94,7 +100,6 @@ public class RepairActivity extends NavigationActivity
 				submit();
 			}
 		});
-		
 	}
 	
 	private void submit()
@@ -102,19 +107,6 @@ public class RepairActivity extends NavigationActivity
 		_taskArchon.executeAsyncTask(new RepairTVAsyncTask());
 	}
 	
-	private void checkLogin()
-	{
-		if (Haier.getInstance().getUser().hasLogin() == true)
-		{
-			checkTV();
-		}else
-		{
-			startActivityForResult(new Intent(RepairActivity.this, UserLoginActivity.class)
-				.putExtra(UserLoginActivity.EXTRA_AUTO, Haier.getInstance().getUser().hasPrepared())
-				,UserLoginActivity.TARGET_REPAIR
-			);
-		}
-	}
 	
 	private void checkTV()
 	{
@@ -123,8 +115,9 @@ public class RepairActivity extends NavigationActivity
 			submit();
 		}else
 		{
-			startActivityForResult(new Intent(RepairActivity.this, QRScanActivity.class)
-				,UserLoginActivity.TARGET_REPAIR
+			startActivityForResult(new Intent(RepairActivity.this, MyTVActivity.class)
+				.putExtra(MyTVActivity.EXTRA_AUTO, true)
+				,RESULT_TV
 			);			
 		}
 	}

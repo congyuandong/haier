@@ -5,7 +5,9 @@ import android.os.AsyncTask;
 import android.os.Build;
 import com.legoo.haier.Application.HaierSettings;
 import com.legoo.haier.Application.HaierThreadPool;
+import com.legoo.haier.Handler.LinkJsonHandler;
 import com.legoo.haier.Handler.Base.NetworkHandler;
+import com.legoo.haier.Handler.Json.JsonOperation;
 
 /**
  * @class NetworkAsyncTask.java
@@ -28,7 +30,7 @@ public abstract class NetworkAsyncTask extends BaseAsyncTask
 	{
 		retryTask = new NetworkRetryTask();
 	}
-	
+
 	protected boolean retryTask(NetworkHandler hanlder)
 	{
 		return retryTask.retry(hanlder);

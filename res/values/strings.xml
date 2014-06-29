@@ -39,7 +39,7 @@
 	<string name="public_consulting">在线咨询</string>
 	<string name="public_one_key_repair">一键报修</string>
 	
-	<string name="public_submit_succeed">您的修改已成功提交</string>
+	<string name="public_submit_succeed">提交成功</string>
     
     <string name="main_notice_title">公告信息：</string>
     <string name="main_function_title">常用功能</string>
@@ -156,5 +156,14 @@
 	<string name="about_copyright">Copyright© 2014, com.legoo All Rights Reserved</string>
 	
 	<string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+	
+	<string name="comment_bar_input_hint">我要评论</string>
+	<string name="comment_bar_submit">发布</string>
+	<string name="comment_bar_reply">回复%1$s：</string>
+	<string name="comment_bar_image_fault">读取图片错误！</string>
+	<string name="comment_bar_input_error">请输入评论文字或选择图片！</string>
+	<string name="comment_bar_login_error">必须登录后才能发表评论！</string>
+	<string name="comment_bar_submit_error">提交评论出错！</string>
+	<string name="comment_bar_submit_success">评论已提交！</string>
 	
 </resources>

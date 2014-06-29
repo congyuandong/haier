@@ -1,12 +1,9 @@
 package com.legoo.haier.AsyncTask;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.apache.http.NameValuePair;
 import com.legoo.haier.Application.Haier;
-import com.legoo.haier.AsyncTask.Base.JsonEvent;
 import com.legoo.haier.AsyncTask.Base.NetworkAsyncTask;
-import com.legoo.haier.Handler.ValueJsonHandler;
+import com.legoo.haier.AsyncTask.Callback.ModelEvent;
+import com.legoo.haier.Handler.LinkJsonHandler;
 import com.legoo.haier.Handler.Json.JsonHandler;
 import com.legoo.haier.Handler.Json.JsonOperation;
 
@@ -27,27 +24,23 @@ public class RecommendAsyncTask extends NetworkAsyncTask
 	}
 	
 	@Override
-	protected JsonEvent doInBackground(Void... params) 
+	protected ModelEvent doInBackground(Void... params) 
 	{   
-		JsonEvent event = new JsonEvent(this);
+		ModelEvent event = new ModelEvent(this);
 		event.setMark(super.getMark());
 		String url = Haier.getInstance().getDataService().getRecommend();
 		if (url != null)
 		{
-			List<NameValuePair> pairs = new ArrayList<NameValuePair>(); 
-		    
-			ValueJsonHandler handler;
+			LinkJsonHandler handler;
 			do
 			{
-				handler = (ValueJsonHandler) JsonOperation.post(url, pairs, new ValueJsonHandler());
+				handler = (LinkJsonHandler) JsonOperation.get(url, new LinkJsonHandler(),true);
 			}
 			while (retryTask(handler) == true);
-			
+			event.setModel(handler.getModel());
 			event.setError(handler.getError());
 			event.setMessage(handler.getMessage());
 
-			pairs.clear();
-			pairs = null;
 			url = null;
 			handler = null;
 		}

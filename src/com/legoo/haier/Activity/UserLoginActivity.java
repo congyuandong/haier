@@ -40,7 +40,7 @@ public class UserLoginActivity extends NavigationActivity
 	
 	public static final int TARGET_NULL = 0;
 	public static final int TARGET_USER_CENTER = 1;
-	public static final int TARGET_REPAIR = 2;
+//	public static final int TARGET_REPAIR = 2;
 	public static final int TARGET_MyTv = 3;
 	public static final int TARGET_OneKeyRepair = 4;
 	public static final int TARGET_BindTv = 5;

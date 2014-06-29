@@ -362,4 +362,30 @@
 	    <item name="android:gravity">center</item>
 	</style>
 	
+	<style name="comment_bar_input">
+   	    <item name="android:singleLine">true</item>
+	    <item name="android:textSize">@dimen/comment_bar_input_fontSize</item>
+	    <item name="android:textColor">@color/comment_bar_input</item>
+	    <item name="android:textColorHint">@color/comment_bar_input_hint</item>
+	    <item name="android:gravity">left|center_vertical</item>
+	</style>
+	
+	<style name="comment_bar_button_text">
+   	    <item name="android:singleLine">true</item>
+	    <item name="android:textSize">@dimen/comment_bar_button_text_fontSize</item>
+	    <item name="android:textColor">@color/comment_bar_button_text_selector</item>
+	    <item name="android:gravity">center</item>
+	    <item name="android:ellipsize">end</item>
+	</style>
+	
+	<style name="comment_bar_submit_text">
+   	    <item name="android:singleLine">true</item>
+	    <item name="android:textSize">@dimen/comment_bar_submit_text_fontSize</item>
+	    <item name="android:textColor">@color/comment_bar_submit_text</item>
+	    <item name="android:gravity">center</item>
+	    <item name="android:shadowColor">@color/background</item>
+	    <item name="android:shadowDx">0</item>
+	    <item name="android:shadowDy">1</item>
+	    <item name="android:shadowRadius">1</item>
+	</style>
 </resources>

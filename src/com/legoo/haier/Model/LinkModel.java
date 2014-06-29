@@ -15,33 +15,9 @@ public class LinkModel extends BaseModel implements ModelInterface, Serializable
 {
 	private static final long serialVersionUID = -779571728492804598L;
 	
-	private String _id;
 	private String _title;
-	private String _time;
-	private String _image;
 	private String _url;
-	private boolean _isexternal;
 	private String _body;
-	
-	public String getID()
-	{
-		return _id;
-	}
-	
-	public void setID(String id)
-	{
-		_id = id;
-	}
-	
-	public String getImage()
-	{
-		return _image;
-	}
-	
-	public void setImage(String image)
-	{
-		_image = image;
-	}
 	
 	public String getTitle()
 	{
@@ -53,16 +29,6 @@ public class LinkModel extends BaseModel implements ModelInterface, Serializable
 		_title = title;
 	}
 	
-	public String getTime()
-	{
-		return _time;
-	}
-	
-	public void setTime(String time)
-	{
-		_time = time;
-	}
-	
 	public String getUrl()
 	{
 		return _url;
@@ -71,16 +37,6 @@ public class LinkModel extends BaseModel implements ModelInterface, Serializable
 	public void setUrl(String url)
 	{
 		_url = url;
-	}
-	
-	public boolean getIsExternal()
-	{
-		return _isexternal;
-	}
-	
-	public void setIsExternal(boolean isexternal)
-	{
-		_isexternal = isexternal;
 	}
 	
 	public String getBody()
@@ -98,9 +54,8 @@ public class LinkModel extends BaseModel implements ModelInterface, Serializable
 		
 	}
 	
-	public LinkModel(String id, String title, String url)
+	public LinkModel(String title, String url)
 	{
-		_id = id;
 		_title = title;
 		_url = url;
 	}
